@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Portfolio</title>
+<meta name="description" content="Yash Trivedi – Cloud Support Engineer Intern and MCA Student with hands-on AWS experience in EC2, S3, RDS, and cloud infrastructure optimization.">
+<meta name="keywords" content="Yash Trivedi, Cloud Engineer, AWS, MCA Student, Cloud Support Engineer Intern, Portfolio">
+<meta name="author" content="Yash Trivedi">
+
+<!-- Mobile & branding -->
+<meta name="theme-color" content="#0f4c75">
+<meta property="og:title" content="Yash Trivedi | Cloud Support Engineer Intern">
+<meta property="og:description" content="MCA Student with hands-on AWS experience in EC2, S3, RDS, and cloud cost optimization.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="image.jpg">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#0f4c75;
+    --secondary:#3282b8;
+    --accent:#bbe1fa;
+    --light:#f7f9fc;
+    --glass:rgba(255,255,255,0.75);
+}
+
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+html{scroll-behavior:smooth;}
+body{
+    background:linear-gradient(180deg,#f2f6ff,#ffffff);
+    color:#1b1b1b;
+}
+
+/* ===== HEADER ===== */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 40px;
+    background:var(--glass);
+    backdrop-filter:blur(12px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    z-index:1000;
+}
+.logo{
+    font-size:22px;
+    font-weight:600;
+    color:var(--primary);
+}
+nav{
+    display:flex;
+}
+nav a{
+    margin:0 16px;
+    text-decoration:none;
+    font-weight:500;
+    color:#1b1b1b;
+    position:relative;
+}
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    transition:.3s;
+}
+nav a:hover::after{width:100%;}
+
+/* Hamburger */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.hamburger span{
+    width:26px;
+    height:3px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    margin:4px 0;
+}
+
+/* ===== HERO SECTION WITH PHOTO ===== */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+    radial-gradient(circle at top right,#bbe1fa,transparent 40%),
+    radial-gradient(circle at bottom left,#3282b8,transparent 45%),
+    linear-gradient(135deg,#0f4c75,#3282b8);
+    color:white;
+    text-align:center;
+    padding:120px 20px 60px 20px;
+}
+.profile-box {
+    animation: fadeUp 1s ease;
+}
+.hero-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--glass);
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+.hero h1{
+    font-size:42px;
+    margin-bottom: 5px;
+}
+.designation {
+    font-size: 20px;
+    color: var(--accent);
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+/* Button Container */
+.btn-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 28px;
+    flex-wrap: wrap;
+}
+
+.hero button, .btn-download {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.btn-work {
+    background: linear-gradient(90deg, #ffffff, #eaf2ff);
+    color: var(--primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.btn-download {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-work:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
+.btn-download:hover { background: white; color: var(--primary); transform: translateY(-3px); }
+
+/* ===== SECTIONS ===== */
+section{
+    padding:90px 40px;
+    text-align:center;
+}
+section h2{
+    font-size:34px;
+    margin-bottom:18px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Experience Layout */
+.experience-item {
+    background: white;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--primary);
+}
+
+/* ===== EDUCATION ===== */
+.cards{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.card{
+    background:linear-gradient(180deg,#ffffff,#f2f6ff);
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-12px);
+}
+.badge{
+    display:inline-block;
+    margin:12px 0;
+    padding:6px 16px;
+    border-radius:30px;
+    font-size:12px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    color:white;
+}
+
+/* ===== CONTACT SOCIAL ===== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+.social-icons a {
+    font-size: 28px;
+    color: var(--primary);
+    transition: 0.3s;
+}
+.social-icons a:hover {
+    color: var(--secondary);
+    transform: scale(1.2);
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(40px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    nav{
+        position:absolute;
+        top:70px;
+        right:-100%;
+        width:100%;
+        background:white;
+        flex-direction:column;
+        text-align:center;
+        transition:.4s;
+        box-shadow:0 15px 30px rgba(0,0,0,.1);
+    }
+    nav.active{right:0;}
+    nav a{ padding:16px; border-bottom:1px solid #eee; margin: 0; }
+    .hamburger{display:flex;}
+    .hero h1{font-size:32px;}
+    .hero-img { width: 150px; height: 150px; }
+    .btn-container { flex-direction: column; align-items: center; }
+}
+/* ===== CLICKABLE CARD ENHANCEMENTS ===== */
+.card-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    position:relative;
+}
+
+.card-link .card{
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+.card-link .card::after{
+    content:"↗";
+    position:absolute;
+    top:16px;
+    right:18px;
+    font-size:18px;
+    color:var(--secondary);
+    opacity:0;
+    transition:0.3s;
+}
+
+.card-link .card:hover::after{
+    opacity:1;
+}
+
+/* Tooltip */
+.card-link .card::before{
+    content:"View Certificate";
+    position:absolute;
+    bottom:15px;
+    right:15px;
+    background:var(--primary);
+    color:white;
+    padding:4px 10px;
+    font-size:11px;
+    border-radius:12px;
+    opacity:0;
+    transform:translateY(6px);
+    transition:0.3s;
+}
+
+.card-link .card:hover::before{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Ripple effect */
+.card span.ripple{
+    position:absolute;
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple 600ms linear;
+    background:rgba(50,130,184,0.4);
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MyPortfolio</div>
+    <nav id="menu">
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education & Certs</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div class="hero" id="home">
+    <div class="profile-box">
+        <img src="image.jpg" alt="Your Photo" class="hero-img">
+        <h1>Yash Trivedi</h1>
+        <div class="designation">Cloud Support Engineer Intern | MCA Student</div>
+        <p>Motivated Cloud Computing graduate with hands-on AWS experience, skilled in deploying and optimizing scalable applications.<br> Detail-oriented, proactive, and eager to contribute to innovative cloud solutions in collaborative environments.</p>
+        
+        <div class="btn-container">
+            <button class="btn-work" onclick="location.href='#experience'">
+                <i class="fas fa-briefcase"></i> View My Work
+            </button>
+            <a href="yash_resume.pdf" download="My_Resume" class="btn-download">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+    </div>
+</div>
+
+<section id="experience">
+    <h2>Work Experience</h2>
+    <div class="experience-item">
+        <h3 style="color:var(--primary);">Cloud Support Engineer Intern</h3>
+        <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">Bit & Binary | 01/2024 - 04/2024</p>
+        <p style="color:#555; line-height: 1.6;">
+            Configured and managed EC2 instance, optimizing performance and ensuring security compliance.
+            Gained hands-on experience utilizing s3 for hosting static web content with high availability.
+            Assisted in the management of AWS RDS and DynamoDB services, contributing to database optimization
+            and maintenance.
+            Monitored and analyzed AWS usage with Cost Explorer, recommending strategies to optimize spending
+            and reduce waste.
+        </p>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education & Certifications</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Master of Computer Applications</h3>
+            <span class="badge">2024 – 2026</span>
+            <p><strong>Silver Oak University</strong></p>
+            <p style="font-size:14px; margin-top:10px; color:#666;">CGPA: 8.5/10.0</p>
+        </div>
+        <div class="card">
+            <h3>AWS Knowledge: Architecting</h3>
+            <span class="badge">Certified</span>
+            <p>Issued by Amazon training and certification</p>
+        </div>
+        <div class="card">
+            <h3>AWS Knowledge: Cloud Essentials</h3>
+            <span class="badge">Certified</span>
+            <p>Issued by Amazon training and certification</p>
+        </div>
+        <div class="card">
+            <h3>AWS Knowledge: Networking Core</h3>
+            <span class="badge">Certified</span>
+            <p>Issued by Amazon training and certification</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm"
+      action="https://formspree.io/f/mzddbdnk"
+      method="POST"
+      style="max-width:520px; margin:auto;">
+
+    <input type="text" name="name" placeholder="Your Name"
+           style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+           required>
+
+    <input type="email" name="email" placeholder="Your Email"
+           style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+           required>
+
+    <textarea name="message" rows="4" placeholder="Your Message"
+              style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+              required></textarea>
+
+    <!-- Anti-spam -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit"
+            style="width:100%; padding:14px; border:none; border-radius:30px;
+                   background:linear-gradient(90deg,var(--primary),var(--secondary));
+                   color:white; font-weight:600; cursor:pointer;">
+        Send Message
+    </button>
+
+    <!-- Status message -->
+    <p id="formStatus" style="margin-top:15px; font-weight:500;"></p>
+    </form>
+
+    <div class="social-icons">
+        <a href="mailto:yashtrivedi269@email.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://in.linkedin.com/in/yash-trivedii" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://ink-inspired.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
+    </div>
+</section>
+
+<footer>© 2026 Yash Trivedi. •  Crafted with passion and code.</footer>
+
+<script>
+const hamburger=document.getElementById("hamburger");
+const menu=document.getElementById("menu");
+hamburger.onclick=()=>menu.classList.toggle("active");
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.onclick = () => menu.classList.remove("active");
+});
+</script>
+<script>
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            status.innerHTML = "✅ Message sent successfully!";
+            status.style.color = "#0f4c75";
+            form.reset();
+        } else {
+            status.innerHTML = "❌ Oops! Something went wrong. Try again.";
+            status.style.color = "red";
+        }
+    } catch (error) {
+        status.innerHTML = "❌ Network error. Please try later.";
+        status.style.color = "red";
+    }
+});
+</script>
+
+</body>
+</html>
