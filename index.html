@@ -8,7 +8,6 @@
 <meta name="keywords" content="Yash Trivedi, Cloud Engineer, AWS, MCA Student, Cloud Support Engineer Intern, Portfolio">
 <meta name="author" content="Yash Trivedi">
 
-<!-- Mobile & branding -->
 <meta name="theme-color" content="#0f4c75">
 <meta property="og:title" content="Yash Trivedi | Cloud Support Engineer Intern">
 <meta property="og:description" content="MCA Student with hands-on AWS experience in EC2, S3, RDS, and cloud cost optimization.">
@@ -182,8 +181,8 @@ section h2{
     color:transparent;
 }
 
-/* Experience Layout */
-.experience-item {
+/* Experience & Project Layout */
+.experience-item, .project-card {
     background: white;
     max-width: 800px;
     margin: 20px auto;
@@ -192,6 +191,42 @@ section h2{
     text-align: left;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     border-left: 6px solid var(--primary);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.tech-tag {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.project-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
 
 /* ===== EDUCATION ===== */
@@ -272,81 +307,7 @@ footer{
     .hero-img { width: 150px; height: 150px; }
     .btn-container { flex-direction: column; align-items: center; }
 }
-/* ===== CLICKABLE CARD ENHANCEMENTS ===== */
-.card-link{
-    text-decoration:none;
-    color:inherit;
-    display:block;
-    position:relative;
-}
-
-.card-link .card{
-    cursor:pointer;
-    position:relative;
-    overflow:hidden;
-}
-
-.card-link .card::after{
-    content:"↗";
-    position:absolute;
-    top:16px;
-    right:18px;
-    font-size:18px;
-    color:var(--secondary);
-    opacity:0;
-    transition:0.3s;
-}
-
-.card-link .card:hover::after{
-    opacity:1;
-}
-
-/* Tooltip */
-.card-link .card::before{
-    content:"View Certificate";
-    position:absolute;
-    bottom:15px;
-    right:15px;
-    background:var(--primary);
-    color:white;
-    padding:4px 10px;
-    font-size:11px;
-    border-radius:12px;
-    opacity:0;
-    transform:translateY(6px);
-    transition:0.3s;
-}
-
-.card-link .card:hover::before{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* Ripple effect */
-.card span.ripple{
-    position:absolute;
-    border-radius:50%;
-    transform:scale(0);
-    animation:ripple 600ms linear;
-    background:rgba(50,130,184,0.4);
-}
-
-@keyframes ripple{
-    to{
-        transform:scale(4);
-        opacity:0;
-    }
-}
 </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPPNRS0J5B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZPPNRS0J5B');
-</script>
 </head>
 
 <body>
@@ -356,6 +317,7 @@ footer{
     <nav id="menu">
         <a href="#home">Home</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education & Certs</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -366,7 +328,7 @@ footer{
 
 <div class="hero" id="home">
     <div class="profile-box">
-        <img src="image.jpg" alt="Your Photo" class="hero-img">
+        <img src="image.jpg" alt="Yash Trivedi" class="hero-img">
         <h1>Yash Trivedi</h1>
         <div class="designation">Cloud Support Engineer Intern | MCA Student</div>
         <p>Motivated Cloud Computing graduate with hands-on AWS experience, skilled in deploying and optimizing scalable applications.<br> Detail-oriented, proactive, and eager to contribute to innovative cloud solutions in collaborative environments.</p>
@@ -395,6 +357,26 @@ footer{
             Monitored and analyzed AWS usage with Cost Explorer, recommending strategies to optimize spending
             and reduce waste.
         </p>
+    </div>
+</section>
+
+<section id="projects" style="background: #f8fafd;">
+    <h2>Featured Projects</h2>
+    <div class="project-card">
+        <h3 style="color:var(--primary);">Cyber Kavach</h3>
+        <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">AI-Powered Scam Detection Tool</p>
+        <p style="color:#555; line-height: 1.6;">
+            Cyber Kavach is a proactive security solution designed to protect users from online scams and phishing attempts. By leveraging AI algorithms, the tool analyzes suspicious links and communication patterns to provide real-time alerts and ensure a safer digital experience.
+        </p>
+        <div class="tech-stack">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Cloud Deployment</span>
+            <span class="tech-tag">Cybersecurity</span>
+        </div>
+        <a href="https://cyber-kavach.vercel.app/" class="project-link">
+            <i class="fas fa-external-link-alt"></i> View Project Details
+        </a>
     </div>
 </section>
 
@@ -444,7 +426,6 @@ footer{
               style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
               required></textarea>
 
-    <!-- Anti-spam -->
     <input type="text" name="_gotcha" style="display:none">
 
     <button type="submit"
@@ -454,12 +435,11 @@ footer{
         Send Message
     </button>
 
-    <!-- Status message -->
     <p id="formStatus" style="margin-top:15px; font-weight:500;"></p>
     </form>
 
     <div class="social-icons">
-        <a href="mailto:yashtrivedi269@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:yashtrivedi269@email.com"><i class="fas fa-envelope"></i></a>
         <a href="https://in.linkedin.com/in/yash-trivedii" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://ink-inspired.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
     </div>
@@ -508,6 +488,4 @@ form.addEventListener("submit", async function (e) {
 </script>
 
 </body>
-
 </html>
-
