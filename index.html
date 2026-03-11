@@ -1,493 +1,348 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Portfolio</title>
-<meta name="description" content="Yash Trivedi – Cloud Support Engineer Intern and MCA Student with hands-on AWS experience in EC2, S3, RDS, and cloud infrastructure optimization.">
-<meta name="keywords" content="Yash Trivedi, Cloud Engineer, AWS, MCA Student, Cloud Support Engineer Intern, Portfolio">
-<meta name="author" content="Yash Trivedi">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Trivedi | Full Stack Developer & Cloud Engineer</title>
 
-<meta name="theme-color" content="#0f4c75">
-<meta property="og:title" content="Yash Trivedi | Cloud Support Engineer Intern">
-<meta property="og:description" content="MCA Student with hands-on AWS experience in EC2, S3, RDS, and cloud cost optimization.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="image.jpg">
-<meta name="google-site-verification" content="tyBF2E4UMyPOO4UM_seGGxREx3dTp_m5ymDoNNZ83uE" />
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Yash Trivedi is a Full Stack Developer, AI enthusiast, and Cloud Support Engineer Intern. Explore projects in React, Node.js, and AWS.">
+    <meta name="keywords"
+        content="Yash Trivedi, Full Stack Developer, Cloud Engineer, AWS, MCA Student, React, Node.js, Portfolio">
+    <meta name="author" content="Yash Trivedi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yash635644.github.io/yash-portfolio/">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Yash Trivedi | Full Stack Developer & Cloud Engineer">
+    <meta property="og:description"
+        content="Explore the portfolio of Yash Trivedi, specializing in scalable web apps, AI integration, and cloud architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="image.jpg">
+    <meta property="og:url" content="https://yash635644.github.io/yash-portfolio/">
 
-<style>
-:root{
-    --primary:#0f4c75;
-    --secondary:#3282b8;
-    --accent:#bbe1fa;
-    --light:#f7f9fc;
-    --glass:rgba(255,255,255,0.75);
-}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yash Trivedi | Full Stack Developer & Cloud Engineer">
+    <meta name="twitter:description"
+        content="Explore the portfolio of Yash Trivedi, specializing in scalable web apps, AI integration, and cloud architecture.">
+    <meta name="twitter:image" content="image.jpg">
 
-/* ===== GLOBAL ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-html{scroll-behavior:smooth;}
-body{
-    background:linear-gradient(180deg,#f2f6ff,#ffffff);
-    color:#1b1b1b;
-}
+    <meta name="theme-color" content="#0f4c75">
 
-/* ===== HEADER ===== */
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:14px 40px;
-    background:var(--glass);
-    backdrop-filter:blur(12px);
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    z-index:1000;
-}
-.logo{
-    font-size:22px;
-    font-weight:600;
-    color:var(--primary);
-}
-nav{
-    display:flex;
-}
-nav a{
-    margin:0 16px;
-    text-decoration:none;
-    font-weight:500;
-    color:#1b1b1b;
-    position:relative;
-}
-nav a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    transition:.3s;
-}
-nav a:hover::after{width:100%;}
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-/* Hamburger */
-.hamburger{
-    display:none;
-    flex-direction:column;
-    cursor:pointer;
-}
-.hamburger span{
-    width:26px;
-    height:3px;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    margin:4px 0;
-}
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 
-/* ===== HERO SECTION WITH PHOTO ===== */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-    radial-gradient(circle at top right,#bbe1fa,transparent 40%),
-    radial-gradient(circle at bottom left,#3282b8,transparent 45%),
-    linear-gradient(135deg,#0f4c75,#3282b8);
-    color:white;
-    text-align:center;
-    padding:120px 20px 60px 20px;
-}
-.profile-box {
-    animation: fadeUp 1s ease;
-}
-.hero-img {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    border: 5px solid var(--glass);
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-.hero h1{
-    font-size:42px;
-    margin-bottom: 5px;
-}
-.designation {
-    font-size: 20px;
-    color: var(--accent);
-    font-weight: 300;
-    margin-bottom: 15px;
-}
-
-/* Button Container */
-.btn-container {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 28px;
-    flex-wrap: wrap;
-}
-
-.hero button, .btn-download {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 15px;
-}
-
-.btn-work {
-    background: linear-gradient(90deg, #ffffff, #eaf2ff);
-    color: var(--primary);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-.btn-download {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-work:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,0.3); }
-.btn-download:hover { background: white; color: var(--primary); transform: translateY(-3px); }
-
-/* ===== SECTIONS ===== */
-section{
-    padding:90px 40px;
-    text-align:center;
-}
-section h2{
-    font-size:34px;
-    margin-bottom:18px;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-/* Experience & Project Layout */
-.experience-item, .project-card {
-    background: white;
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: left;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    border-left: 6px solid var(--primary);
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-}
-
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 15px 0;
-}
-
-.tech-tag {
-    background: var(--accent);
-    color: var(--primary);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.project-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-/* ===== EDUCATION ===== */
-.cards{
-    margin-top:45px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-.card{
-    background:linear-gradient(180deg,#ffffff,#f2f6ff);
-    border-radius:20px;
-    padding:28px;
-    box-shadow:0 15px 35px rgba(0,0,0,.12);
-    transition:.4s;
-}
-.card:hover{
-    transform:translateY(-12px);
-}
-.badge{
-    display:inline-block;
-    margin:12px 0;
-    padding:6px 16px;
-    border-radius:30px;
-    font-size:12px;
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    color:white;
-}
-
-/* ===== CONTACT SOCIAL ===== */
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 30px;
-}
-.social-icons a {
-    font-size: 28px;
-    color: var(--primary);
-    transition: 0.3s;
-}
-.social-icons a:hover {
-    color: var(--secondary);
-    transform: scale(1.2);
-}
-
-/* ===== FOOTER ===== */
-footer{
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    color:white;
-    text-align:center;
-    padding:18px;
-}
-
-/* ===== ANIMATION ===== */
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(40px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-    nav{
-        position:absolute;
-        top:70px;
-        right:-100%;
-        width:100%;
-        background:white;
-        flex-direction:column;
-        text-align:center;
-        transition:.4s;
-        box-shadow:0 15px 30px rgba(0,0,0,.1);
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Person",
+      "name": "Yash Trivedi",
+      "url": "https://yash635644.github.io/yash-portfolio/",
+      "image": "https://yash635644.github.io/yash-portfolio/image.jpg",
+      "jobTitle": "Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Bit & Binary"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Silver Oak University"
+      },
+      "sameAs": [
+        "https://in.linkedin.com/in/yash-trivedii",
+        "https://ink-inspired.blogspot.com/"
+      ]
     }
-    nav.active{right:0;}
-    nav a{ padding:16px; border-bottom:1px solid #eee; margin: 0; }
-    .hamburger{display:flex;}
-    .hero h1{font-size:32px;}
-    .hero-img { width: 150px; height: 150px; }
-    .btn-container { flex-direction: column; align-items: center; }
-}
-</style>
+    </script>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">MyPortfolio</div>
-    <nav id="menu">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education & Certs</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-    </div>
-</header>
-
-<div class="hero" id="home">
-    <div class="profile-box">
-        <img src="image.jpg" alt="Yash Trivedi" class="hero-img">
-        <h1>Yash Trivedi</h1>
-        <div class="designation">Cloud Support Engineer Intern | MCA Student</div>
-        <p>Motivated Cloud Computing graduate with hands-on AWS experience, skilled in deploying and optimizing scalable applications.<br> Detail-oriented, proactive, and eager to contribute to innovative cloud solutions in collaborative environments.</p>
-        
-        <div class="btn-container">
-            <button class="btn-work" onclick="location.href='#experience'">
-                <i class="fas fa-briefcase"></i> View My Work
-            </button>
-            <a href="yash_resume.pdf" download="My_Resume" class="btn-download">
-                <i class="fas fa-download"></i> Download CV
-            </a>
+    <header role="banner">
+        <div class="logo">MyPortfolio</div>
+        <nav id="menu" aria-label="Main Navigation">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education & Certs</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="hamburger" id="hamburger" aria-label="Toggle Navigation" role="button" tabindex="0">
+            <span></span><span></span><span></span>
         </div>
-    </div>
-</div>
+    </header>
 
-<section id="experience">
-    <h2>Work Experience</h2>
-    <div class="experience-item">
-        <h3 style="color:var(--primary);">Cloud Support Engineer Intern</h3>
-        <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">Bit & Binary | 01/2024 - 04/2024</p>
-        <p style="color:#555; line-height: 1.6;">
-            Configured and managed EC2 instance, optimizing performance and ensuring security compliance.
-            Gained hands-on experience utilizing s3 for hosting static web content with high availability.
-            Assisted in the management of AWS RDS and DynamoDB services, contributing to database optimization
-            and maintenance.
-            Monitored and analyzed AWS usage with Cost Explorer, recommending strategies to optimize spending
-            and reduce waste.
-        </p>
-    </div>
-</section>
+    <main>
+        <div class="hero" id="home">
+            <div class="profile-box">
+                <img src="image.jpg" alt="Yash Trivedi" class="hero-img" width="180" height="180">
+                <h1>Yash Trivedi</h1>
+                <div class="designation">Full Stack Developer | AI & Cloud Enthusiast | MCA Student</div>
+                <p class="hero-text"
+                    style="max-width: 600px; margin: 0 auto; line-height: 1.6; font-size: 18px; color: #f0f0f0;">
+                    Building intelligent, scalable web applications. Passionate about leveraging cloud expertise and
+                    modern technologies to solve real-world problems.
+                </p>
 
-<section id="projects" style="background: #f8fafd;">
-    <h2>Featured Projects</h2>
-    <div class="project-card">
-        <h3 style="color:var(--primary);">Cyber Kavach</h3>
-        <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">AI-Powered Scam Detection Tool</p>
-        <p style="color:#555; line-height: 1.6;">
-            Cyber Kavach is a proactive security solution designed to protect users from online scams and phishing attempts. By leveraging AI algorithms, the tool analyzes suspicious links and communication patterns to provide real-time alerts and ensure a safer digital experience.
-        </p>
-        <div class="tech-stack">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Machine Learning</span>
-            <span class="tech-tag">Cloud Deployment</span>
-            <span class="tech-tag">Cybersecurity</span>
+                <div class="btn-container">
+                    <button class="btn-work" onclick="location.href='#about'" aria-label="Scroll to About Me section">
+                        <i class="fas fa-user" aria-hidden="true"></i> More About Me
+                    </button>
+                    <a href="yash_resume.pdf" download="My_Resume" class="btn-download" aria-label="Download Resume">
+                        <i class="fas fa-download" aria-hidden="true"></i> Download CV
+                    </a>
+                </div>
+            </div>
         </div>
-        <a href="https://cyber-kavach.vercel.app/" class="project-link">
-            <i class="fas fa-external-link-alt"></i> View Project Details
-        </a>
-    </div>
-</section>
 
-<section id="education">
-    <h2>Education & Certifications</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Master of Computer Applications</h3>
-            <span class="badge">2024 – 2026</span>
-            <p><strong>Silver Oak University</strong></p>
-            <p style="font-size:14px; margin-top:10px; color:#666;">CGPA: 8.5/10.0</p>
-        </div>
-        <div class="card">
-            <h3>AWS Knowledge: Architecting</h3>
-            <span class="badge">Certified</span>
-            <p>Issued by Amazon training and certification</p>
-        </div>
-        <div class="card">
-            <h3>AWS Knowledge: Cloud Essentials</h3>
-            <span class="badge">Certified</span>
-            <p>Issued by Amazon training and certification</p>
-        </div>
-        <div class="card">
-            <h3>AWS Knowledge: Networking Core</h3>
-            <span class="badge">Certified</span>
-            <p>Issued by Amazon training and certification</p>
-        </div>
-    </div>
-</section>
+        <section id="about" style="background: #ffffff;" class="fade-in-section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p style="margin-bottom: 15px;">
+                        I am an MCA student with a strong background as a Cloud Support Engineer Intern, deeply
+                        passionate about Full Stack Development and Artificial Intelligence.
+                    </p>
+                    <p style="margin-bottom: 15px;">
+                        Over the years, I've built several real-world projects ranging from an AI-powered scam detection
+                        tool to intelligent news aggregation platforms and full-stack management systems, heavily
+                        integrating LLM APIs along the way.
+                    </p>
+                    <p>
+                        I specialize in cloud deployment, backend API design, and crafting secure, highly scalable
+                        applications from the ground up, with a primary focus on solutions that make a tangible
+                        difference.
+                    </p>
+                </div>
+                <div class="about-skills">
+                    <h3>Core Technologies</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Neon DB</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">AWS (EC2, S3, RDS)</span>
+                        <span class="tech-tag">AI / LLM Integration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm"
-      action="https://formspree.io/f/mzddbdnk"
-      method="POST"
-      style="max-width:520px; margin:auto;">
+        <section id="experience" style="background: #f2f6ff;" class="fade-in-section">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3 style="color:var(--primary);">Cloud Support Engineer Intern</h3>
+                <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">Bit & Binary | 01/2024 -
+                    04/2024</p>
+                <p style="color:#555; line-height: 1.6;">
+                    Configured and managed EC2 instance, optimizing performance and ensuring security compliance.
+                    Gained hands-on experience utilizing S3 for hosting static web content with high availability.
+                    Assisted in the management of AWS RDS and DynamoDB services, contributing to database optimization
+                    and maintenance.
+                    Monitored and analyzed AWS usage with Cost Explorer, recommending strategies to optimize spending
+                    and reduce waste.
+                </p>
+            </div>
+        </section>
 
-    <input type="text" name="name" placeholder="Your Name"
-           style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
-           required>
+        <section id="projects" style="background: #f8fafd;" class="fade-in-section">
+            <h2>Featured Projects</h2>
+            <div class="project-card">
+                <h3 style="color:var(--primary);">Cyber Kavach</h3>
+                <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">AI-Powered Scam Detection Tool
+                </p>
+                <p style="color:#555; line-height: 1.6;">
+                    Cyber Kavach is a proactive security solution designed to protect users from online scams and
+                    phishing
+                    attempts. By leveraging AI algorithms, the tool analyzes suspicious links and communication patterns
+                    to
+                    provide real-time alerts and ensure a safer digital experience.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Cloud Deployment</span>
+                    <span class="tech-tag">Cybersecurity</span>
+                </div>
+                <a href="https://cyber-kavach.vercel.app/" class="project-link" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> View Project Details
+                </a>
+            </div>
 
-    <input type="email" name="email" placeholder="Your Email"
-           style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
-           required>
+            <div class="project-card">
+                <h3 style="color:var(--primary);">Barber CRM</h3>
+                <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">Full Stack Business Management
+                    System</p>
+                <p style="color:#555; line-height: 1.6;">
+                    Barber CRM is a full stack web-based management system developed to simplify salon and barber shop
+                    operations.
+                    The application provides features like customer management, appointment scheduling, service
+                    tracking, and admin dashboard.<br><br>
+                    The project is built using modern web technologies with secure authentication, backend API
+                    integration, and cloud database support.
+                    It demonstrates real-world full stack development skills including frontend UI, backend logic, and
+                    database design.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Full Stack Development</span>
+                </div>
+                <a href="#" class="project-link" aria-label="View Barber CRM Source Code">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> View Project Details
+                </a>
+            </div>
 
-    <textarea name="message" rows="4" placeholder="Your Message"
-              style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
-              required></textarea>
+            <div class="project-card">
+                <h3 style="color:var(--primary);">Gathered</h3>
+                <p style="color:var(--secondary); font-weight:600; margin-bottom: 10px;">AI-Powered Intelligent News
+                    Aggregator System</p>
+                <p style="color:#555; line-height: 1.6;">
+                    Gathered is a production-ready AI news aggregator that automatically collects real-time updates from
+                    multiple global sources using RSS feeds and scheduled backend crawling. <br>
+                    The system analyzes articles and generates AI-powered summaries using Artificial Intelligence,
+                    providing users with fast and unbiased news insights.<br><br>
+                    The platform is built with a modern full stack architecture including a React + TypeScript frontend,
+                    Node.js + Express backend, and PostgreSQL database hosted on Neon.<br>
+                    Advanced features such as server-side caching, API security, rate limiting, and AI integration make
+                    the system scalable and efficient.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React 19</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Neon</span>
+                    <span class="tech-tag">REST API</span>
+                    <span class="tech-tag">Caching & Security</span>
+                    <span class="tech-tag">Full Stack Development</span>
+                    <span class="tech-tag">AI Integration</span>
+                </div>
+                <a href="#" class="project-link" aria-label="View Gathered System Demo">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i> View Project Details
+                </a>
+            </div>
+        </section>
 
-    <input type="text" name="_gotcha" style="display:none">
+        <section id="education" style="background: #ffffff;" class="fade-in-section">
+            <h2>Education & Certifications</h2>
+            <div class="edu-container">
+                <!-- Education Column -->
+                <div class="edu-column">
+                    <h3 class="col-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Academic Degrees</h3>
+                    <div class="edu-card">
+                        <h4>Master of Computer Applications</h4>
+                        <p class="inst">Silver Oak University</p>
+                        <div class="details">
+                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2024 – 2026</span>
+                            <span style="font-weight: 600; color: var(--primary);">CGPA: 8.5/10.0</span>
+                        </div>
+                    </div>
+                    <div class="edu-card">
+                        <h4>Bachelor of Computer Applications</h4>
+                        <p class="inst">Silver Oak University</p>
+                        <div class="details">
+                            <span><i class="far fa-calendar-alt" aria-hidden="true"></i> 2021 – 2024</span>
+                            <span style="font-weight: 600; color: var(--primary);">CGPA: 8.41/10.0</span>
+                        </div>
+                    </div>
+                </div>
 
-    <button type="submit"
-            style="width:100%; padding:14px; border:none; border-radius:30px;
-                   background:linear-gradient(90deg,var(--primary),var(--secondary));
-                   color:white; font-weight:600; cursor:pointer;">
-        Send Message
-    </button>
+                <!-- Certifications Column -->
+                <div class="edu-column">
+                    <h3 class="col-title"><i class="fas fa-award" aria-hidden="true"></i> Certifications</h3>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fab fa-aws" aria-hidden="true"></i></div>
+                        <div class="cert-info">
+                            <h4>AWS Knowledge: Architecting</h4>
+                            <p>Amazon Training and Certification</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fab fa-aws" aria-hidden="true"></i></div>
+                        <div class="cert-info">
+                            <h4>AWS Knowledge: Cloud Essentials</h4>
+                            <p>Amazon Training and Certification</p>
+                        </div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fab fa-aws" aria-hidden="true"></i></div>
+                        <div class="cert-info">
+                            <h4>AWS Knowledge: Networking Core</h4>
+                            <p>Amazon Training and Certification</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p id="formStatus" style="margin-top:15px; font-weight:500;"></p>
-    </form>
+        <section class="contact fade-in-section" id="contact" style="background: #f2f6ff;">
+            <h2>Contact Me</h2>
+            <form id="contactForm" action="https://formspree.io/f/mzddbdnk" method="POST"
+                style="max-width:520px; margin:auto;">
+                <label for="name" style="display:none;">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name"
+                    style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+                    required>
 
-    <div class="social-icons">
-        <a href="mailto:yashtrivedi269@email.com"><i class="fas fa-envelope"></i></a>
-        <a href="https://in.linkedin.com/in/yash-trivedii" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://ink-inspired.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
-    </div>
-</section>
+                <label for="email" style="display:none;">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email"
+                    style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+                    required>
 
-<footer>© 2026 Yash Trivedi. •  Crafted with passion and code.</footer>
+                <label for="message" style="display:none;">Your Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Your Message"
+                    style="width:100%; padding:14px; margin:10px 0; border-radius:10px; border:1px solid #ddd;"
+                    required></textarea>
 
-<script>
-const hamburger=document.getElementById("hamburger");
-const menu=document.getElementById("menu");
-hamburger.onclick=()=>menu.classList.toggle("active");
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-document.querySelectorAll('nav a').forEach(link => {
-    link.onclick = () => menu.classList.remove("active");
-});
-</script>
-<script>
-const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+                <button type="submit"
+                    style="width:100%; padding:14px; border:none; border-radius:30px; background:linear-gradient(90deg,var(--primary),var(--secondary)); color:white; font-weight:600; cursor:pointer;">
+                    Send Message
+                </button>
 
-form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+                <p id="formStatus" style="margin-top:15px; font-weight:500;" aria-live="polite"></p>
+            </form>
 
-    const data = new FormData(form);
+            <div class="social-icons">
+                <a href="mailto:yashtrivedi269@email.com" aria-label="Email Yash Trivedi"><i class="fas fa-envelope"
+                        aria-hidden="true"></i></a>
+                <a href="https://in.linkedin.com/in/yash-trivedii" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit Yash Trivedi's LinkedIn Profile"><i class="fab fa-linkedin"
+                        aria-hidden="true"></i></a>
+                <a href="https://ink-inspired.blogspot.com/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Visit Yash Trivedi's Blog"><i class="fab fa-blogger" aria-hidden="true"></i></a>
+            </div>
+        </section>
+    </main>
 
-    try {
-        const response = await fetch(form.action, {
-            method: form.method,
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        });
+    <footer role="contentinfo">© 2026 Yash Trivedi. • Crafted with passion and code.</footer>
 
-        if (response.ok) {
-            status.innerHTML = "✅ Message sent successfully!";
-            status.style.color = "#0f4c75";
-            form.reset();
-        } else {
-            status.innerHTML = "❌ Oops! Something went wrong. Try again.";
-            status.style.color = "red";
-        }
-    } catch (error) {
-        status.innerHTML = "❌ Network error. Please try later.";
-        status.style.color = "red";
-    }
-});
-</script>
-
+    <!-- External Script -->
+    <script src="script.js" defer></script>
 </body>
-</html>
 
+</html>
