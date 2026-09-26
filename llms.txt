@@ -1,0 +1,49 @@
+# Yash Trivedi
+
+> Yash Trivedi is a Jr. AI Automation & SEO Executive at Jenex Technovation Pvt. Ltd. in Ahmedabad, Gujarat, India (September 2026 – present). He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
+
+Last updated: 2026-09-26
+
+This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
+
+## Key facts
+
+- Name: Yash Trivedi
+- Current role: Jr. AI Automation & SEO Executive, Jenex Technovation Pvt. Ltd., Ahmedabad (Sep 2026 – present)
+- Location: Ahmedabad, Gujarat, India
+- Specialties: technical SEO, SEO audits, schema markup, llms.txt, local SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AI automation, AI-powered app development
+- Contact: yashtrivedi269@gmail.com · https://in.linkedin.com/in/yash-trivedii
+
+## Experience
+
+- **Jr. AI Automation & SEO Executive, Jenex Technovation (Sep 2026 – present):** AI automation, AI-search optimization, technical and local SEO for US-based client websites, and continued development of the FieldLoop AI app.
+- **SEO & AI Development Intern, Jenex Technovation (17 Jun – 16 Sep 2026):** 30+ advanced SEO audits of live US contractor websites; Google Search Console and Bing Webmaster Tools for 50+ sites; the company's first schema markup and first llms.txt on a live client website; citations in 50+ directories for 15+ websites; 20+ guest posts; management of 15+ WordPress sites, including restores and migrations; core developer on FieldLoop AI.
+- **Cloud Support Engineer Intern, Bit & Binary (Jan – Apr 2024):** AWS EC2, IAM, S3 static hosting, RDS, DynamoDB and cost optimization with Cost Explorer.
+
+## Projects
+
+- **FieldLoop AI:** an AI-powered field service mobile app (Flutter) with a Google Gemini Live voice agent connected to 8 app functions, Deepgram speech-to-text, Groq, AWS Lambda, S3, Supabase, geofencing, offline photo sync, estimates, change orders and invoices. Private client project.
+- [Cyber Kavach](https://cyber-kavach.vercel.app/): AI phishing and scam detection platform (React, Node.js, Supabase, LLM APIs).
+- [Gathered](https://gathered.pages.dev/): AI-powered news aggregator with RSS crawling and AI summaries (React, TypeScript, Node.js, PostgreSQL on Neon).
+- [Barber CRM](https://vogue-studio-topaz.vercel.app/): full stack salon management system (React, Node.js, Express, Supabase).
+
+## Skills
+
+- SEO: Technical SEO, On-Page, Local SEO, AEO, GEO, Schema Markup, llms.txt, robots.txt, Core Web Vitals, E-E-A-T, link building
+- SEO tools: Google Search Console, Google Analytics 4, Bing Webmaster Tools, PageSpeed Insights, Rich Results Test, Google Business Profile, CallRail, Rank Math Pro
+- AI: Google Gemini Live (function calling), Groq, Deepgram, LLM integration, voice agents
+- Development: Flutter, FlutterFlow, React, Next.js, Node.js, Express, Supabase, PostgreSQL, AWS Lambda, API Gateway, S3, CloudFront, Vercel, WordPress
+
+## Education and certifications
+
+- Master of Computer Applications (MCA), Silver Oak University, 2024–2026, CGPA 8.59
+- Bachelor of Computer Applications (BCA), Silver Oak University, 2021–2024, CGPA 8.41
+- AWS Knowledge: Architecting · Cloud Essentials · Networking Core (Amazon Web Services)
+
+## Links
+
+- [Portfolio](https://yash635644.github.io/yash-portfolio/)
+- [Resume (PDF)](https://yash635644.github.io/yash-portfolio/yash_resume.pdf)
+- [LinkedIn](https://in.linkedin.com/in/yash-trivedii)
+- [GitHub](https://github.com/yash635644)
+- [Blog](https://ink-inspired.blogspot.com/)
