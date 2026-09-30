@@ -67,16 +67,103 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     revealEls.forEach(el => revealObserver.observe(el));
 
-    // 4. Active nav link
-    const navLinks = menu.querySelectorAll("a[href^='#']");
+    // 4. Active nav link (header, plus the "on this page" bar on service pages)
+    const navLinks = document.querySelectorAll("#menu a[href^='#'], .jump-nav a[href^='#']:not(.jump-cta)");
+    const dropToggle = document.querySelector(".nav-drop-toggle");
     const sectionObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (!entry.isIntersecting) return;
             const id = entry.target.id;
             navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${id}`));
+            if (dropToggle && document.getElementById("services")) dropToggle.classList.toggle("active", id === "services");
+            // keep the active chip visible in the horizontally scrolling bar (never scrolls the page)
+            const activeJump = document.querySelector(".jump-nav a.active");
+            if (activeJump) {
+                const bar = activeJump.closest("ul");
+                bar.scrollTo({ left: activeJump.offsetLeft - bar.clientWidth / 2 + activeJump.offsetWidth / 2, behavior: reduceMotion ? "auto" : "smooth" });
+            }
         });
     }, { rootMargin: "-45% 0px -50% 0px" });
     document.querySelectorAll("main section[id]").forEach(s => sectionObserver.observe(s));
+
+    // 4b. Services dropdown: hover on desktop (CSS), click/tap and keyboard everywhere
+    document.querySelectorAll(".nav-drop").forEach(drop => {
+        const toggle = drop.querySelector(".nav-drop-toggle");
+        const setDrop = open => {
+            drop.classList.toggle("open", open);
+            toggle.setAttribute("aria-expanded", String(open));
+        };
+        toggle.addEventListener("click", e => {
+            e.stopPropagation();
+            setDrop(!drop.classList.contains("open"));
+        });
+        document.addEventListener("click", e => { if (!drop.contains(e.target)) setDrop(false); });
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape" && drop.classList.contains("open")) {
+                setDrop(false);
+                toggle.focus();
+            }
+        });
+        drop.addEventListener("focusout", e => { if (!drop.contains(e.relatedTarget) && window.innerWidth > 820) setDrop(false); });
+    });
+
+    // 4c. Blog table of contents: highlight the section being read
+    // (the last heading above 30% of the viewport is "current", so jumps and fast scrolls stay correct)
+    const tocLinks = document.querySelectorAll(".toc a[href^='#']");
+    const tocHeadings = Array.from(document.querySelectorAll(".prose h2[id]"));
+    if (tocLinks.length && tocHeadings.length) {
+        let tocTicking = false;
+        const updateToc = () => {
+            const line = window.innerHeight * 0.3;
+            let current = null;
+            tocHeadings.forEach(h => { if (h.getBoundingClientRect().top <= line) current = h.id; });
+            tocLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === `#${current}`));
+            tocTicking = false;
+        };
+        window.addEventListener("scroll", () => {
+            if (!tocTicking) {
+                requestAnimationFrame(updateToc);
+                tocTicking = true;
+            }
+        }, { passive: true });
+        updateToc();
+    }
+
+    // 4d. Mobile "Hire Me" bar: show after the hero, hide once the contact form is on screen
+    const mobileCta = document.querySelector(".mobile-cta");
+    const contactSection = document.getElementById("contact");
+    if (mobileCta) {
+        document.body.classList.add("has-mobile-cta");
+        let contactVisible = false;
+        if (contactSection) {
+            new IntersectionObserver(([entry]) => {
+                contactVisible = entry.isIntersecting;
+                updateCta();
+            }).observe(contactSection);
+        }
+        function updateCta() {
+            mobileCta.classList.toggle("show", window.scrollY > 500 && !contactVisible);
+        }
+        window.addEventListener("scroll", updateCta, { passive: true });
+        updateCta();
+    }
+
+    // 4e. Copy-link share button
+    document.querySelectorAll("[data-copy]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(btn.dataset.copy);
+                btn.classList.add("copied");
+                btn.setAttribute("aria-label", "Link copied");
+                setTimeout(() => {
+                    btn.classList.remove("copied");
+                    btn.setAttribute("aria-label", "Copy link");
+                }, 2000);
+            } catch (err) {
+                window.prompt("Copy this link:", btn.dataset.copy);
+            }
+        });
+    });
 
     // 5. Counters
     // Real numbers stay in the HTML for crawlers; only animate from 0 when motion is allowed
@@ -105,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 6. Typing rotator
     const typed = document.getElementById("typed");
-    const words = ["AI automation", "technical SEO", "AEO & GEO for AI search", "AI-powered apps", "schema & llms.txt"];
+    const words = ["AI automation", "technical SEO", "AEO & GEO for AI search", "AI-powered apps", "social media posts", "schema & llms.txt"];
     if (typed && !reduceMotion) {
         let w = 0, i = words[0].length, deleting = true;
         function type() {

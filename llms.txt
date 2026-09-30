@@ -2,7 +2,7 @@
 
 > Yash Trivedi is an AI Automation & SEO specialist based in Ahmedabad, Gujarat, India. He works full-time as a Jr. AI Automation & SEO Executive at Jenex Technovation and also takes freelance and remote projects. He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
 
-Last updated: 2026-09-26
+Last updated: 2026-09-30
 
 This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
 
@@ -12,7 +12,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - Current role: Jr. AI Automation & SEO Executive, Jenex Technovation, Ahmedabad (full-time, Sep 2026 – present)
 - Freelance: alongside the full-time role, available for SEO, AI-search (AEO/GEO), AI automation and AI app projects, remote or in Ahmedabad
 - Location: Ahmedabad, Gujarat, India
-- Specialties: technical SEO, SEO audits, schema markup, llms.txt, local SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AI automation, AI-powered app development
+- Specialties: technical SEO, SEO audits, schema markup, llms.txt, local SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AI automation, AI-powered app development, social media management (Instagram, Facebook, Pinterest, LinkedIn)
 - Contact (project enquiries): yashtrivedi269@gmail.com · https://in.linkedin.com/in/yash-trivedii
 
 ## Services
@@ -20,7 +20,31 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - SEO audits and technical SEO (crawlability, indexing, Core Web Vitals, redirects, sitemaps, schema)
 - AI search optimization (AEO/GEO): llms.txt, AI-crawler rules, structured data, answer-first content
 - Local SEO and content: Google Business Profile, citations, SEO blogs, guest posts
+- Social media management: planned posts, designs and captions for Instagram, Facebook, Pinterest and LinkedIn; profile setup and consistency
 - AI automation and AI-powered apps: voice agents, LLM function calling, automated workflows (Flutter, Gemini Live, AWS, Supabase)
+
+## Service pages
+
+- [SEO & AI Automation Services in Ahmedabad](https://yash635644.github.io/yash-portfolio/services.html): overview of all three services and help choosing the right one.
+- [Freelance SEO Expert in Ahmedabad](https://yash635644.github.io/yash-portfolio/seo-expert-ahmedabad.html): SEO audits, technical SEO, on-page SEO, local SEO and Google Business Profile, citations, Search Console and GA4 reporting.
+- [AI SEO Expert in Ahmedabad: AEO & GEO](https://yash635644.github.io/yash-portfolio/ai-seo-expert-ahmedabad.html): getting businesses cited by ChatGPT, Gemini, Perplexity and Google AI Overviews with llms.txt, schema, entity signals and answer-first content.
+- [Social Media Management in Ahmedabad](https://yash635644.github.io/yash-portfolio/social-media-management-ahmedabad.html): daily planned posts, designs and captions for Instagram, Facebook, Pinterest and LinkedIn, with profiles set up to support SEO and AI search.
+- [AI Automation & AI App Development in Ahmedabad](https://yash635644.github.io/yash-portfolio/ai-automation-ahmedabad.html): AI voice agents, LLM integration, workflow automation, AI chat assistants, AI web apps and Flutter mobile apps.
+
+## Blog
+
+- [What Is GEO and AEO? How to Get Your Business Cited by ChatGPT and Google AI](https://yash635644.github.io/yash-portfolio/what-is-geo-aeo.html): What GEO and AEO actually mean, how AI assistants pick their sources, and a 9-step checklist to make your business one of them.
+- [Social Media Management for Small Businesses: Instagram, Facebook, Pinterest and LinkedIn](https://yash635644.github.io/yash-portfolio/social-media-management-guide.html): Which platforms suit your business, what and how often to post, how to plan a month of content, and how social media supports SEO and AI search.
+- [AI-Based Web and App Development: A Practical Guide for Businesses](https://yash635644.github.io/yash-portfolio/ai-web-app-development-guide.html): Which AI features are worth building into your website or app, how they work under the hood, and how to launch a first version quickly.
+- [Technical SEO Audit Checklist for 2026: 30 Checks That Matter](https://yash635644.github.io/yash-portfolio/technical-seo-audit-checklist.html): The 30 technical checks that decide whether Google and AI assistants can crawl, index and trust your website, and how to prioritise the fixes.
+- [How AI Makes Web and App Development Faster and More Accurate](https://yash635644.github.io/yash-portfolio/ai-faster-web-app-development.html): Where AI genuinely speeds up building websites and apps, why speed alone is not enough, and the workflow that keeps AI-written code accurate.
+- [Local SEO Checklist for Ahmedabad Businesses (2026)](https://yash635644.github.io/yash-portfolio/local-seo-checklist-ahmedabad.html): Everything a local business in Ahmedabad needs to show up in Google Maps and "near me" searches, in the order that matters.
+- [7 AI Automation Ideas for Small Businesses in Ahmedabad](https://yash635644.github.io/yash-portfolio/ai-automation-ideas-small-business.html): Seven practical ways a small business can use AI to save hours every week, with where to start and what to watch out for.
+
+## Areas served
+
+- Ahmedabad and Gandhinagar, Gujarat (in person or remote)
+- Remote across India and abroad
 
 ## Experience
 
@@ -50,6 +74,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 
 ## Links
 
+- [Sitemap](https://yash635644.github.io/yash-portfolio/sitemap.html)
 - [Portfolio](https://yash635644.github.io/yash-portfolio/)
 - [Resume (PDF)](https://yash635644.github.io/yash-portfolio/yash_resume.pdf)
 - [LinkedIn](https://in.linkedin.com/in/yash-trivedii)
