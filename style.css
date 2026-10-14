@@ -3871,3 +3871,10 @@ html:has(.jump-nav) {
         max-height: 1200px;
     }
 }
+
+/* ----- projects: two columns so featured + paired cards never leave gaps ----- */
+@media (min-width: 601px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

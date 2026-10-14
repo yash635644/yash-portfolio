@@ -2,7 +2,7 @@
 
 > Yash Trivedi is an AI Automation & SEO specialist based in Ahmedabad, Gujarat, India. He works full-time as a Jr. AI Automation & SEO Executive at Jenex Technovation and also takes freelance and remote projects. He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
 
-Last updated: 2026-09-30
+Last updated: 2026-10-14
 
 This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
 
@@ -10,6 +10,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 
 - Name: Yash Trivedi
 - Current role: Jr. AI Automation & SEO Executive, Jenex Technovation, Ahmedabad (full-time, Sep 2026 – present)
+- Founder of Gathered (https://gathered.pages.dev/), an AI-powered news and current-affairs platform
 - Freelance: alongside the full-time role, available for SEO, AI-search (AEO/GEO), AI automation and AI app projects, remote or in Ahmedabad
 - Location: Ahmedabad, Gujarat, India
 - Specialties: technical SEO, SEO audits, schema markup, llms.txt, local SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AI automation, AI-powered app development, social media management (Instagram, Facebook, Pinterest, LinkedIn)
@@ -54,16 +55,16 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 
 ## Projects
 
-- **FieldLoop AI:** an AI-powered field service mobile app (Flutter) with a Google Gemini Live voice agent connected to 8 app functions, Deepgram speech-to-text, Groq, AWS Lambda, S3, Supabase, geofencing, offline photo sync, estimates, change orders and invoices. Private client project.
+- **FieldLoop AI:** an AI-powered field service mobile app (Flutter) with a Google Gemini Live voice agent connected to 8 app functions, Deepgram speech-to-text, LLM APIs, AWS Lambda, S3, Supabase, geofencing, offline photo sync, estimates, change orders and invoices. Private client project.
 - [Cyber Kavach](https://cyber-kavach.vercel.app/): AI phishing and scam detection platform (React, Node.js, Supabase, LLM APIs).
-- [Gathered](https://gathered.pages.dev/): AI-powered news aggregator with RSS crawling and AI summaries (React, TypeScript, Node.js, PostgreSQL on Neon).
+- [Gathered](https://gathered.pages.dev/): independent AI-powered news and current-affairs platform that Yash Trivedi founded, designed and built. India and world news with AI summaries linked to the original source, AI search, listen-aloud, daily current affairs and quizzes for UPSC, SSC, Banking, Railways and State PSC, UPSC study cards with Mains questions, and a Constitution of India section. Rebuilt from a React (Vite) SPA into server-rendered Next.js 16 on Cloudflare Pages and Workers, with an Express API on Render, Neon Postgres, LLM-powered AI and a React admin with an AI writing assistant; SEO/AEO/GEO via NewsArticle schema, Google News sitemap, RSS and llms.txt.
 - [Barber CRM](https://vogue-studio-topaz.vercel.app/): full stack salon management system (React, Node.js, Express, Supabase).
 
 ## Skills
 
 - SEO: Technical SEO, On-Page, Local SEO, AEO, GEO, Schema Markup, llms.txt, robots.txt, Core Web Vitals, E-E-A-T, link building
 - SEO tools: Google Search Console, Google Analytics 4, Bing Webmaster Tools, PageSpeed Insights, Rich Results Test, Google Business Profile, CallRail, Rank Math Pro
-- AI: Google Gemini Live (function calling), Groq, Deepgram, LLM integration, voice agents
+- AI: Google Gemini Live (function calling), Deepgram, LLM integration, voice agents
 - Development: Flutter, FlutterFlow, React, Next.js, Node.js, Express, Supabase, PostgreSQL, AWS Lambda, API Gateway, S3, CloudFront, Vercel, WordPress
 
 ## Education and certifications

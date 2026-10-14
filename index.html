@@ -106,7 +106,7 @@
             "@type": "SpeakableSpecification",
             "cssSelector": ["#hero-title", ".hero-text", ".about-text", "#faq summary", "#faq details p"]
           },
-          "dateModified": "2026-09-30",
+          "dateModified": "2026-10-14",
           "inLanguage": "en-IN"
         },
         {
@@ -162,7 +162,7 @@
             "Search Engine Optimization", "Technical SEO", "Local SEO", "Answer Engine Optimization",
             "Generative Engine Optimization", "Schema Markup", "llms.txt", "Google Search Console",
             "Google Analytics 4", "AI Automation", "Large Language Models", "Google Gemini Live",
-            "Flutter", "AWS Lambda", "Supabase", "React", "Node.js", "WordPress",
+            "Flutter", "AWS Lambda", "Supabase", "React", "Next.js", "TypeScript", "Cloudflare Workers", "Node.js", "WordPress",
             "Social Media Marketing", "Instagram Marketing", "Pinterest Marketing", "Content Marketing"
           ],
           "hasCredential": [
@@ -185,13 +185,23 @@
           "address": { "@type": "PostalAddress", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" }
         },
         {
+          "@type": "NewsMediaOrganization",
+          "@id": "https://gathered.pages.dev/#organization",
+          "name": "Gathered",
+          "url": "https://gathered.pages.dev/",
+          "logo": "https://gathered.pages.dev/icons/icon-512.png",
+          "description": "Independent English-language news site for India and world affairs, with AI summaries linked to original sources and daily current affairs for competitive exams.",
+          "founder": { "@id": "https://yash635644.github.io/yash-portfolio/#person" },
+          "foundingLocation": { "@type": "Place", "name": "Ahmedabad, Gujarat, India" }
+        },
+        {
           "@type": "ItemList",
           "@id": "https://yash635644.github.io/yash-portfolio/#projects",
           "name": "Projects by Yash Trivedi",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "FieldLoop AI", "keywords": "Flutter, Gemini Live, Deepgram, Groq, AWS Lambda, S3, Supabase", "description": "AI-powered field service app for contractors with a Gemini Live voice agent, geofencing, offline photo sync, estimates, change orders and invoices.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" } } },
+            { "@type": "ListItem", "position": 1, "item": { "@type": "CreativeWork", "name": "FieldLoop AI", "keywords": "Flutter, Gemini Live, Deepgram, LLM APIs, AWS Lambda, S3, Supabase", "description": "AI-powered field service app for contractors with a Gemini Live voice agent, geofencing, offline photo sync, estimates, change orders and invoices.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" } } },
             { "@type": "ListItem", "position": 2, "item": { "@type": "CreativeWork", "name": "Cyber Kavach", "url": "https://cyber-kavach.vercel.app/", "keywords": "React, Node.js, Express, Supabase, LLM APIs", "description": "AI-powered phishing and scam detection platform.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" } } },
-            { "@type": "ListItem", "position": 3, "item": { "@type": "CreativeWork", "name": "Gathered", "url": "https://gathered.pages.dev/", "keywords": "React 19, TypeScript, Node.js, PostgreSQL, LLM APIs", "description": "AI-powered news aggregator with RSS crawling and AI summaries.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" } } },
+            { "@type": "ListItem", "position": 3, "item": { "@type": "WebSite", "@id": "https://gathered.pages.dev/#website", "name": "Gathered", "url": "https://gathered.pages.dev/", "keywords": "Next.js 16, React 19, TypeScript, Tailwind CSS, Cloudflare Workers, Node.js, Express, PostgreSQL (Neon), LLM APIs, AI news summaries, current affairs", "description": "Independent AI-powered news and current-affairs platform founded and built by Yash Trivedi: India and world news with AI summaries linked to the original source, AI search, daily current affairs for UPSC, SSC and Banking exams, UPSC study cards and a Constitution of India section. Rebuilt from a React SPA to server-rendered Next.js 16 on Cloudflare for SEO, AEO and GEO.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" }, "publisher": { "@id": "https://gathered.pages.dev/#organization" } } },
             { "@type": "ListItem", "position": 4, "item": { "@type": "CreativeWork", "name": "Barber CRM", "url": "https://vogue-studio-topaz.vercel.app/", "keywords": "React, Node.js, Express, Supabase, REST API", "description": "Full stack salon and barber shop management system.", "creator": { "@id": "https://yash635644.github.io/yash-portfolio/#person" } } }
           ]
         },
@@ -217,7 +227,7 @@
             {
               "@type": "Question",
               "name": "What AI-powered development experience does Yash Trivedi have?",
-              "acceptedAnswer": { "@type": "Answer", "text": "He is a core developer on FieldLoop AI, a Flutter field service app using Google Gemini Live function calling (8 connected functions), Deepgram speech-to-text, Groq, AWS Lambda, S3 and Supabase. He has also built LLM-powered web apps such as Cyber Kavach and Gathered." }
+              "acceptedAnswer": { "@type": "Answer", "text": "He is the founder and developer of Gathered (gathered.pages.dev), an AI-powered news and current-affairs platform built with Next.js 16, TypeScript, Cloudflare Workers, an Express API on Render, Neon Postgres and LLM APIs, and a core developer on FieldLoop AI, a Flutter field service app using Google Gemini Live function calling (8 connected functions), Deepgram speech-to-text, AWS Lambda, S3 and Supabase. He has also built Cyber Kavach, an LLM-powered scam detection app." }
             },
             {
               "@type": "Question",
@@ -395,9 +405,10 @@
                         <abbr title="Generative Engine Optimization">GEO</abbr> and llms.txt).
                     </p>
                     <p>
-                        On the AI side I'm a core developer on <strong>FieldLoop AI</strong>, a Flutter field-service
-                        app with a Gemini Live voice agent, and I build LLM-powered web apps and automations
-                        on AWS and Supabase.
+                        On the AI side I'm the founder of <strong>Gathered</strong>, an AI-powered news and
+                        current-affairs platform built with Next.js, and a core developer on <strong>FieldLoop
+                        AI</strong>, a Flutter field-service app with a Gemini Live voice agent. I build LLM-powered
+                        web apps and automations on Cloudflare, AWS and Supabase.
                     </p>
                 </div>
                 <div class="about-card reveal">
@@ -605,6 +616,43 @@
             <div class="projects-grid">
                 <article class="project-card featured reveal">
                     <div class="project-top">
+                        <span class="project-label"><i class="fas fa-star" aria-hidden="true"></i> Founder · Live
+                            product</span>
+                        <i class="fas fa-newspaper project-icon" aria-hidden="true"></i>
+                    </div>
+                    <h3>Gathered</h3>
+                    <p class="project-sub">AI-Powered News &amp; Current Affairs Platform</p>
+                    <p>An independent news platform I founded, designed and built. It gathers India and world news
+                        from trusted publishers, writes short AI summaries that always link to the original source,
+                        and publishes daily current affairs for UPSC, SSC, Banking and other exam aspirants. I
+                        rebuilt it from a React (Vite) single-page app into a server-rendered
+                        <strong>Next.js 16</strong> site so search engines and AI assistants can read every page.</p>
+                    <ul class="project-points">
+                        <li>AI story summaries, AI search and listen-aloud, powered by large language models (LLMs)</li>
+                        <li>Daily current affairs and quiz, UPSC study cards with Mains questions, and a Constitution
+                            of India section</li>
+                        <li>SEO, AEO and GEO built in: NewsArticle schema, Google News sitemap, RSS feed and llms.txt
+                        </li>
+                        <li>Newsroom admin with an AI writing assistant; published edits go live instantly</li>
+                        <li>Runs on free tiers: Cloudflare Pages and Workers, Render and Neon Postgres</li>
+                    </ul>
+                    <ul class="tech-stack" aria-label="Tech stack">
+                        <li>Next.js 16</li>
+                        <li>React 19</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                        <li>Cloudflare Workers</li>
+                        <li>Node.js · Express</li>
+                        <li>PostgreSQL (Neon)</li>
+                        <li>LLM APIs</li>
+                    </ul>
+                    <a href="https://gathered.pages.dev/" class="project-link" target="_blank"
+                        rel="noopener noreferrer">Visit Gathered <i class="fas fa-arrow-right"
+                            aria-hidden="true"></i></a>
+                </article>
+
+                <article class="project-card featured reveal">
+                    <div class="project-top">
                         <span class="project-label"><i class="fas fa-star" aria-hidden="true"></i> Core project ·
                             Client work</span>
                         <i class="fas fa-mobile-screen-button project-icon" aria-hidden="true"></i>
@@ -623,7 +671,7 @@
                         <li>Flutter</li>
                         <li>Gemini Live</li>
                         <li>Deepgram</li>
-                        <li>Groq</li>
+                        <li>LLM APIs</li>
                         <li>AWS Lambda</li>
                         <li>S3</li>
                         <li>Supabase</li>
@@ -650,27 +698,6 @@
                         <li>LLM APIs</li>
                     </ul>
                     <a href="https://cyber-kavach.vercel.app/" class="project-link" target="_blank"
-                        rel="noopener noreferrer">Live project <i class="fas fa-arrow-right"
-                            aria-hidden="true"></i></a>
-                </article>
-
-                <article class="project-card reveal">
-                    <div class="project-top">
-                        <span class="project-label">AI · Content</span>
-                        <i class="fas fa-newspaper project-icon" aria-hidden="true"></i>
-                    </div>
-                    <h3>Gathered</h3>
-                    <p class="project-sub">AI-Powered News Aggregator</p>
-                    <p>Crawls global RSS feeds on a schedule, removes duplicates and writes AI summaries. It uses
-                        server-side caching, rate limiting and API security.</p>
-                    <ul class="tech-stack" aria-label="Tech stack">
-                        <li>React 19</li>
-                        <li>TypeScript</li>
-                        <li>Node.js</li>
-                        <li>PostgreSQL (Neon)</li>
-                        <li>LLM APIs</li>
-                    </ul>
-                    <a href="https://gathered.pages.dev/" class="project-link" target="_blank"
                         rel="noopener noreferrer">Live project <i class="fas fa-arrow-right"
                             aria-hidden="true"></i></a>
                 </article>
@@ -743,7 +770,6 @@
                     <ul class="tech-stack">
                         <li>Google Gemini Live</li>
                         <li>Function Calling</li>
-                        <li>Groq API</li>
                         <li>Deepgram</li>
                         <li>LLM Integration</li>
                         <li>Voice Agents</li>
@@ -757,6 +783,8 @@
                         <li>FlutterFlow</li>
                         <li>React</li>
                         <li>Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
                         <li>Node.js</li>
                         <li>Express</li>
                         <li>Supabase</li>
@@ -764,6 +792,7 @@
                         <li>AWS Lambda</li>
                         <li>API Gateway</li>
                         <li>S3 · CloudFront</li>
+                        <li>Cloudflare Pages · Workers</li>
                         <li>Vercel</li>
                         <li>Postman</li>
                         <li>Git</li>
@@ -884,7 +913,7 @@
                 <article class="project-card post-card reveal">
                     <a href="ai-web-app-development-guide.html" class="post-thumb" tabindex="-1" aria-hidden="true"><i class="fas fa-laptop-code"></i><span>await ai()</span></a>
                     <div class="post-text">
-                        <p class="post-meta-sm">AI Development · <time datetime="2026-09-26">26 September 2026</time> · 5 min read</p>
+                        <p class="post-meta-sm">AI Development · <time datetime="2026-09-26">26 September 2026</time> · 6 min read</p>
                         <h3><a href="ai-web-app-development-guide.html">AI-Based Web and App Development: A Practical Guide for Businesses</a></h3>
                         <p>Which AI features are worth building into your website or app, how they work under the hood, and how to launch a first version quickly.</p>
                         <a href="ai-web-app-development-guide.html" class="project-link" aria-label="Read: AI-Based Web and App Development: A Practical Guide for Businesses">Read article <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
@@ -931,9 +960,12 @@
                 </details>
                 <details class="reveal">
                     <summary>What AI-powered development experience does Yash Trivedi have?</summary>
-                    <p>He is a core developer on FieldLoop AI, a Flutter field service app using Google Gemini Live
-                        function calling (8 connected functions), Deepgram speech-to-text, Groq, AWS Lambda, S3 and
-                        Supabase. He has also built LLM-powered web apps such as Cyber Kavach and Gathered.</p>
+                    <p>He is the founder and developer of <a href="https://gathered.pages.dev/" target="_blank"
+                            rel="noopener">Gathered</a>, an AI-powered news and current-affairs platform built with
+                        Next.js 16, TypeScript, Cloudflare Workers, an Express API on Render, Neon Postgres and LLM APIs,
+                        and a core developer on FieldLoop AI, a Flutter field service app using Google Gemini Live
+                        function calling (8 connected functions), Deepgram speech-to-text, AWS Lambda, S3 and
+                        Supabase. He has also built Cyber Kavach, an LLM-powered scam detection app.</p>
                 </details>
                 <details class="reveal">
                     <summary>Can I hire Yash Trivedi for a freelance project?</summary>
@@ -1012,7 +1044,7 @@
         </ul>
         <div class="footer-inner">
             <a href="#home" class="logo logo-footer" aria-label="Back to top">YT<span>.</span></a>
-            <p>© <span id="year">2026</span> Yash Trivedi · AI Automation &amp; SEO · Ahmedabad<br><small class="updated">Last updated <time datetime="2026-09-30">September 2026</time></small></p>
+            <p>© <span id="year">2026</span> Yash Trivedi · AI Automation &amp; SEO · Ahmedabad<br><small class="updated">Last updated <time datetime="2026-10-14">October 2026</time></small></p>
             <ul class="footer-social" aria-label="Social profiles">
                 <li><a href="https://in.linkedin.com/in/yash-trivedii" target="_blank" rel="noopener noreferrer"
                         aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
