@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 6. Typing rotator
     const typed = document.getElementById("typed");
-    const words = ["AI automation", "technical SEO", "AEO & GEO for AI search", "AI-powered apps", "social media posts", "schema & llms.txt"];
+    const words = ["AI automation", "technical SEO", "AEO & GEO for AI search", "AI-powered apps", "social media posts", "AI knowledge graphs", "schema & llms.txt"];
     if (typed && !reduceMotion) {
         let w = 0, i = words[0].length, deleting = true;
         function type() {
