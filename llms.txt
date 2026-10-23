@@ -2,7 +2,7 @@
 
 > Yash Trivedi is an AI Automation & SEO specialist based in Ahmedabad, Gujarat, India. He works full-time as a Jr. AI Automation & SEO Executive at Jenex Technovation and also takes freelance and remote projects. He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
 
-Last updated: 2026-10-16
+Last updated: 2026-10-23
 
 This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
 
@@ -12,6 +12,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - Current role: Jr. AI Automation & SEO Executive, Jenex Technovation, Ahmedabad (full-time, Sep 2026 – present)
 - Founder of Gathered (https://gathered.pages.dev/), an AI-powered news and current-affairs platform
 - Founder of Throvic (https://throvic.pages.dev/), a free AI knowledge graph and mind map explorer
+- Founder of Cyber Kavach (https://cyber-kavach.vercel.app/), a free AI scam checker for India
 - Freelance: alongside the full-time role, available for SEO, AI-search (AEO/GEO), AI automation and AI app projects, remote or in Ahmedabad
 - Location: Ahmedabad, Gujarat, India
 - Specialties: technical SEO, SEO audits, schema markup, llms.txt, local SEO, AEO (Answer Engine Optimization), GEO (Generative Engine Optimization), AI automation, AI-powered app development, social media management (Instagram, Facebook, Pinterest, LinkedIn)
@@ -58,7 +59,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 
 - **FieldLoop AI:** an AI-powered field service mobile app (Flutter) with a Google Gemini Live voice agent connected to 8 app functions, Deepgram speech-to-text, LLM APIs, AWS Lambda, S3, Supabase, geofencing, offline photo sync, estimates, change orders and invoices. Private client project.
 - [Throvic](https://throvic.pages.dev/): free AI knowledge graph and mind map explorer that Yash Trivedi founded and built. Type any topic and it maps the key ideas, people and events and how they connect, streamed live, with every concept verified on Wikipedia (summary, photo, source). Web, radial and tree layouts, expandable branches, three explanation levels, and export as social images, PDF study sheet or JSON. Exam hub with 64 central and state government exams, 14 subjects and 330 topic maps linked to daily current affairs on Gathered. Built with Next.js 16, React 19, TypeScript, Tailwind CSS, D3.js and Cloudflare Pages/Workers; free, no sign-up.
-- [Cyber Kavach](https://cyber-kavach.vercel.app/): AI phishing and scam detection platform (React, Node.js, Supabase, LLM APIs).
+- [Cyber Kavach](https://cyber-kavach.vercel.app/): free, bilingual (English and Hindi) AI scam checker and cyber-fraud help platform for India that Yash Trivedi founded and built. Six free checkers (message, link, UPI ID, phone number, screenshot, QR code), a dual-engine check (AI plus an offline Indian scam-pattern engine), 14 scam guides, a recovery checklist, complaint letter formats, a fraud reporting guide, an official helpline directory and a Scam IQ quiz. Nothing scanned is stored. Built with Next.js 16, React 19, TypeScript and Tailwind CSS on Vercel.
 - [Gathered](https://gathered.pages.dev/): independent AI-powered news and current-affairs platform that Yash Trivedi founded, designed and built. India and world news with AI summaries linked to the original source, AI search, listen-aloud, daily current affairs and quizzes for UPSC, SSC, Banking, Railways and State PSC, UPSC study cards with Mains questions, and a Constitution of India section. Rebuilt from a React (Vite) SPA into server-rendered Next.js 16 on Cloudflare Pages and Workers, with an Express API on Render, Neon Postgres, LLM-powered AI and a React admin with an AI writing assistant; SEO/AEO/GEO via NewsArticle schema, Google News sitemap, RSS and llms.txt.
 - [Barber CRM](https://vogue-studio-topaz.vercel.app/): full stack salon management system (React, Node.js, Express, Supabase).
 

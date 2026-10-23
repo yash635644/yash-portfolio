@@ -3878,3 +3878,8 @@ html:has(.jump-nav) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* a lone non-featured project card spans the full row */
+.projects-grid .project-card.wide {
+    grid-column: 1 / -1;
+}
