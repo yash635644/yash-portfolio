@@ -2,7 +2,7 @@
 
 > Yash Trivedi is an AI Automation & SEO specialist based in Ahmedabad, Gujarat, India. He works full-time as a Jr. AI Automation & SEO Executive at Jenex Technovation and also takes freelance and remote projects. He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
 
-Last updated: 2026-10-23
+Last updated: 2026-11-18
 
 This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
 
@@ -34,8 +34,9 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - [Social Media Management in Ahmedabad](https://yash635644.github.io/yash-portfolio/social-media-management-ahmedabad.html): daily planned posts, designs and captions for Instagram, Facebook, Pinterest and LinkedIn, with profiles set up to support SEO and AI search.
 - [AI Automation & AI App Development in Ahmedabad](https://yash635644.github.io/yash-portfolio/ai-automation-ahmedabad.html): AI voice agents, LLM integration, workflow automation, AI chat assistants, AI web apps and Flutter mobile apps.
 
-## Blog
+## Resources: articles and case studies
 
+- Case study: [Sentio: Building My Own Companion App for a Smartwatch](https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html): How I worked out an undocumented Bluetooth protocol and built a fast, private Android app with health scores, 8 widgets and no cloud, tested on a real watch.
 - [How to Make Mind Maps for UPSC Preparation: A Step-by-Step Guide](https://yash635644.github.io/yash-portfolio/upsc-mind-maps-guide.html): What to map, a 6-step method that works for history, polity and geography, a worked Quit India Movement example, and how to use free AI tools without trusting them blindly.
 - [Lost Money to an Online Scam in India? What to Do in the First Hour](https://yash635644.github.io/yash-portfolio/online-fraud-what-to-do-first-hour.html): A calm, step-by-step plan for the first hour after online or UPI fraud in India: who to call, what to file, what to tell your bank and which mistakes cost people their money.
 - [What Is GEO and AEO? How to Get Your Business Cited by ChatGPT and Google AI](https://yash635644.github.io/yash-portfolio/what-is-geo-aeo.html): What GEO and AEO actually mean, how AI assistants pick their sources, and a 9-step checklist to make your business one of them.
@@ -63,6 +64,7 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - [Throvic](https://throvic.pages.dev/): free AI knowledge graph and mind map explorer that Yash Trivedi founded and built. Type any topic and it maps the key ideas, people and events and how they connect, streamed live, with every concept verified on Wikipedia (summary, photo, source). Web, radial and tree layouts, expandable branches, three explanation levels, and export as social images, PDF study sheet or JSON. Exam hub with 64 central and state government exams, 14 subjects and 330 topic maps linked to daily current affairs on Gathered. Built with Next.js 16, React 19, TypeScript, Tailwind CSS, D3.js and Cloudflare Pages/Workers; free, no sign-up.
 - [Cyber Kavach](https://cyber-kavach.vercel.app/): free, bilingual (English and Hindi) AI scam checker and cyber-fraud help platform for India that Yash Trivedi founded and built. Six free checkers (message, link, UPI ID, phone number, screenshot, QR code), a dual-engine check (AI plus an offline Indian scam-pattern engine), 14 scam guides, a recovery checklist, complaint letter formats, a fraud reporting guide, an official helpline directory and a Scam IQ quiz. Nothing scanned is stored. Built with Next.js 16, React 19, TypeScript and Tailwind CSS on Vercel.
 - [Gathered](https://gathered.pages.dev/): independent AI-powered news and current-affairs platform that Yash Trivedi founded, designed and built. India and world news with AI summaries linked to the original source, AI search, listen-aloud, daily current affairs and quizzes for UPSC, SSC, Banking, Railways and State PSC, UPSC study cards with Mains questions, and a Constitution of India section. Rebuilt from a React (Vite) SPA into server-rendered Next.js 16 on Cloudflare Pages and Workers, with an Express API on Render, Neon Postgres, LLM-powered AI and a React admin with an AI writing assistant; SEO/AEO/GEO via NewsArticle schema, Google News sitemap, RSS and llms.txt.
+- [Sentio (case study)](https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html): private Android smartwatch companion app built from scratch by Yash Trivedi. Worked out the watch's undocumented Bluetooth Low Energy protocol, then built a Kotlin, Jetpack Compose, Room and Hilt app with incremental offline-first sync, data-quality filters, readiness/strain/sleep scores, phone-based sleep detection and 8 widgets; no account, no cloud, no analytics; 68 unit tests. Personal project, not on any store.
 - [Barber CRM](https://vogue-studio-topaz.vercel.app/): full stack salon management system (React, Node.js, Express, Supabase).
 
 ## Skills

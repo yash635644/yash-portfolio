@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Security: GitHub Pages can't set headers, so the policy is set here -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <title>Case Study: Private Smartwatch Companion App (Android, BLE)</title>
+    <meta name="description" content="Case study: how I built Sentio, a private Android companion app for my smartwatch with Kotlin, Jetpack Compose and Bluetooth Low Energy. No cloud, 68 tests.">
+    <meta name="author" content="Yash Trivedi">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html">
+    <meta name="geo.region" content="IN-GJ">
+    <meta name="geo.placename" content="Ahmedabad, Gujarat, India">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Yash Trivedi – Portfolio">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:title" content="Case Study: Private Smartwatch Companion App (Android, BLE)">
+    <meta property="og:description" content="Case study: how I built Sentio, a private Android companion app for my smartwatch with Kotlin, Jetpack Compose and Bluetooth Low Energy. No cloud, 68 tests.">
+    <meta property="og:url" content="https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html">
+    <meta property="og:image" content="https://yash635644.github.io/yash-portfolio/sentio-case-study-card.jpg?v=1">
+    <meta property="og:image:secure_url" content="https://yash635644.github.io/yash-portfolio/sentio-case-study-card.jpg?v=1">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sentio case study: a private smartwatch companion app built by Yash Trivedi with Kotlin, Jetpack Compose and Bluetooth LE">
+    <meta property="article:published_time" content="2026-11-17">
+    <meta property="article:modified_time" content="2026-11-18">
+    <meta property="article:section" content="Case study">
+    <meta property="article:author" content="https://in.linkedin.com/in/yash-trivedii">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Case Study: Private Smartwatch Companion App (Android, BLE)">
+    <meta name="twitter:description" content="Case study: how I built Sentio, a private Android companion app for my smartwatch with Kotlin, Jetpack Compose and Bluetooth Low Energy. No cloud, 68 tests.">
+    <meta name="twitter:image" content="https://yash635644.github.io/yash-portfolio/sentio-case-study-card.jpg?v=1">
+    <meta name="twitter:image:alt" content="Sentio case study: a private smartwatch companion app built by Yash Trivedi with Kotlin, Jetpack Compose and Bluetooth LE">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0f4c75">
+    <link rel="alternate" type="text/markdown" href="llms.txt" title="LLM-friendly profile summary">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html#article",
+          "mainEntityOfPage": "https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html",
+          "headline": "Sentio: Building My Own Companion App for a Smartwatch",
+          "description": "Case study: how I built Sentio, a private Android companion app for my smartwatch with Kotlin, Jetpack Compose and Bluetooth Low Energy. No cloud, 68 tests.",
+          "datePublished": "2026-11-17",
+          "dateModified": "2026-11-18",
+          "inLanguage": "en-IN",
+          "keywords": "smartwatch companion app, Android BLE app development, Bluetooth Low Energy Android, Kotlin Jetpack Compose case study, health data app, offline-first Android app, custom smartwatch app",
+          "articleSection": "Case study",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://yash635644.github.io/yash-portfolio/sentio-case-study-card.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "author": {
+            "@id": "https://yash635644.github.io/yash-portfolio/#person"
+          },
+          "publisher": {
+            "@id": "https://yash635644.github.io/yash-portfolio/#person"
+          },
+          "isPartOf": {
+            "@id": "https://yash635644.github.io/yash-portfolio/blog.html#blog"
+          },
+          "wordCount": 2122,
+          "about": [
+            "Bluetooth Low Energy",
+            "Android (operating system)",
+            "Smartwatch",
+            "Jetpack Compose"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://yash635644.github.io/yash-portfolio/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Resources",
+              "item": "https://yash635644.github.io/yash-portfolio/blog.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Sentio case study",
+              "item": "https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://yash635644.github.io/yash-portfolio/#person",
+          "name": "Yash Trivedi",
+          "url": "https://yash635644.github.io/yash-portfolio/",
+          "image": "https://yash635644.github.io/yash-portfolio/yash-trivedi.jpg",
+          "jobTitle": [
+            "Jr. AI Automation & SEO Executive",
+            "Freelance AI Automation & SEO Specialist"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://in.linkedin.com/in/yash-trivedii",
+            "https://github.com/yash635644",
+            "https://ink-inspired.blogspot.com/"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How did you connect to a smartwatch with no public documentation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I recorded the Bluetooth traffic between my own watch and phone using Android's developer options, mapped the watch's Bluetooth services, and matched each action to its message by changing one setting at a time. Every finding was marked as verified on the watch or still to be confirmed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Sentio send health data to the cloud?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Sentio has no account, no cloud and no analytics. Health data stays on the phone, and the internet is used only for an optional weather forecast. Data leaves the phone only when I export it."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Could a custom companion app damage the watch?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It could if it sent the wrong commands, so Sentio has a safety block list that makes reset, power-off and firmware commands impossible to send, and every setting written to the watch is read back to confirm it was saved."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is Sentio available to download?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Sentio is a personal project built for my own watch and my own use, and it is not published on any app store."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you keep a Bluetooth Low Energy connection stable on Android?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pair through Android's Companion Device Manager so the app can reconnect without location permission, keep the connection in one long-running component that reconnects by itself, and compare your app's messages with a known-good conversation when the device drops the link. In Sentio, a missing confirmation message caused a disconnect every 60 seconds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you sync health data from a wearable without draining the phone battery?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sync incrementally so only new data is fetched, sync on app open and every 2 hours rather than constantly, back off in battery saver, and debounce heavy work like recomputing scores. Sentio uses about 1 mAh per hour in the background, measured with Android's battery statistics."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I ask you questions if I am building or learning something similar?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Founders, developers and students can send me a question through the contact form on my portfolio, whether it is about Bluetooth connections, background syncing, testing or whether an idea is realistic."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I read the full technical case study?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The full version covers the protocol research, exact scoring formulas, architecture and test results. Request it through the contact form on my portfolio and I will send it to you personally by email."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header id="siteHeader">
+        <a href="index.html" class="logo" aria-label="Yash Trivedi – home">YT<span>.</span></a>
+        <nav id="menu" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <div class="nav-drop">
+                <button class="nav-drop-toggle" type="button" aria-expanded="false" aria-controls="servicesMenu">Services <i class="fas fa-chevron-down" aria-hidden="true"></i></button>
+                <div class="drop-panel" id="servicesMenu">
+                    <a href="seo-expert-ahmedabad.html"><span class="drop-icon"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></span><span><strong>SEO Expert in Ahmedabad</strong><small>Audits, technical and local SEO</small></span></a>
+                    <a href="ai-seo-expert-ahmedabad.html"><span class="drop-icon"><i class="fas fa-robot" aria-hidden="true"></i></span><span><strong>AI SEO (AEO &amp; GEO)</strong><small>Get cited by ChatGPT, Gemini and AI Overviews</small></span></a>
+                    <a href="ai-automation-ahmedabad.html"><span class="drop-icon"><i class="fas fa-microchip" aria-hidden="true"></i></span><span><strong>AI Automation &amp; Apps</strong><small>Voice agents, LLM apps and workflow automation</small></span></a>
+                    <a href="social-media-management-ahmedabad.html"><span class="drop-icon"><i class="fas fa-share-nodes" aria-hidden="true"></i></span><span><strong>Social Media Management</strong><small>Daily posts for Instagram, Facebook, Pinterest and LinkedIn</small></span></a>
+                    <a href="services.html" class="drop-all">All services overview <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="blog.html" class="active" aria-current="true">Resources</a>
+            <a href="index.html#contact" class="nav-cta">Let's Talk</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main id="main">
+        <section class="hero sub-hero has-stats cs-hero" aria-labelledby="hero-title">
+            <canvas id="neural" aria-hidden="true"></canvas>
+            <div class="hero-grid" aria-hidden="true"></div>
+            <div class="hero-tokens" aria-hidden="true">
+                <span style="--x:6%;--y:22%;--d:0s">MTU 247</span>
+                <span style="--x:86%;--y:18%;--d:-3s">GATT notify</span>
+                <span style="--x:70%;--y:88%;--d:-6s">read-back ✓</span>
+                <span style="--x:8%;--y:86%;--d:-2s">Room</span>
+                <span style="--x:44%;--y:8%;--d:-8s">0x2A19</span>
+            </div>
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <ol class="breadcrumb" aria-label="Breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="blog.html">Resources</a></li>
+                        <li aria-current="page">Sentio case study</li>
+                    </ol>
+                    <p class="status-pill"><i class="fas fa-heart-pulse" aria-hidden="true"></i> Case study</p>
+                    <h1 id="hero-title">Sentio: Building My Own Companion App for a Smartwatch</h1>
+                    <p class="post-meta">
+                        <span><i class="fas fa-user" aria-hidden="true"></i>By <a href="index.html#about" rel="author">Yash Trivedi</a></span>
+                        <span><i class="far fa-calendar" aria-hidden="true"></i><time datetime="2026-11-17">17 November 2026</time></span>
+                        <span><i class="far fa-clock" aria-hidden="true"></i>13 min read</span>
+                    </p>
+                    <dl class="cs-facts">
+                        <div><dt>Role</dt><dd>Solo: research, protocol work, Android, UI/UX, testing</dd></div>
+                        <div><dt>Timeline</dt><dd>October to November 2026</dd></div>
+                        <div><dt>Platform</dt><dd>Android 11+</dd></div>
+                        <div><dt>Stack</dt><dd>Kotlin, Jetpack Compose, BLE, Room, Hilt</dd></div>
+                        <div><dt>Tested on</dt><dd>Two real phones and a real watch</dd></div>
+                        <div><dt>Type</dt><dd>Personal project, not on any store</dd></div>
+                    </dl>
+                </div>
+                <div class="cs-visual" aria-hidden="true">
+                <div class="phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                <p class="ph-top"><span>Today</span><span><i class="fas fa-clock"></i> 82%</span></p>
+                <div class="ph-dial" style="--v:78"><div><strong>78</strong><small>Readiness</small></div></div>
+                <p class="ph-reason">Slept 7 h 12 m · resting heart rate normal</p>
+                <div class="ph-grid">
+                <div><small>Strain</small><b>9.4</b></div>
+                <div><small>Sleep score</small><b>84</b></div>
+                <div><small>Steps</small><b>8,214</b></div>
+                <div><small>Energy</small><b>63</b></div>
+                </div>
+                <div class="ph-bars"><i style="--h:55%"></i><i style="--h:70%"></i><i style="--h:40%"></i><i style="--h:85%"></i><i style="--h:62%"></i><i style="--h:90%"></i><i style="--h:74%"></i></div>
+                </div>
+                </div>
+                <div class="watch-card"><div><strong>10:42</strong><small><i class="fas fa-heart"></i> 72</small></div></div>
+                <p class="viz-note">Illustration · sample data</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Key numbers">
+            <div class="stat reveal"><span class="num" data-count="68">68</span>
+                <p>Unit tests</p>
+            </div>
+            <div class="stat reveal"><span class="num" data-count="8">8</span>
+                <p>Home-screen widgets</p>
+            </div>
+            <div class="stat reveal"><span class="num" data-count="12">12</span><span class="plus">+</span>
+                <p>Watch features supported</p>
+            </div>
+            <div class="stat reveal"><span class="num" data-count="25">25</span><span class="plus">+</span>
+                <p>New features beyond the original</p>
+            </div>
+        </section>
+
+        <section class="section" aria-label="Article">
+            <div class="post-layout">
+                <article class="prose">
+                    <details class="toc toc-mobile">
+                        <summary class="box-label"><i class="fas fa-list" aria-hidden="true"></i> In this article</summary>
+                        <ol>
+                            <li><a href="#the-problem">The problem</a></li>
+                            <li><a href="#what-i-built">What I built</a></li>
+                            <li><a href="#how-i-approached-it">How I approached it</a></li>
+                            <li><a href="#key-decisions-and-why">Key decisions and why</a></li>
+                            <li><a href="#official-app-vs-sentio">Official app vs Sentio</a></li>
+                            <li><a href="#one-bug-start-to-finish">One bug, start to finish</a></li>
+                            <li><a href="#results">Results</a></li>
+                            <li><a href="#the-deep-dive">The deep dive</a></li>
+                            <li><a href="#what-i-learned">What I learned</a></li>
+                            <li><a href="#building-something-similar-ask-me">Building something similar? Ask me</a></li>
+                            <li><a href="#request-the-full-case-study">Request the full case study</a></li>
+                            <li><a href="#faq">Frequently asked questions</a></li>
+                        </ol>
+                    </details>
+
+                    <div class="answer-box">
+                        <p class="box-label"><i class="fas fa-bolt" aria-hidden="true"></i> Quick answer</p>
+                        <p><strong>Sentio</strong> is a private Android companion app I built from scratch for a budget smartwatch I own. With no public documentation, I worked out how the watch talks to the phone over <strong>Bluetooth Low Energy</strong>, wrote my own connection layer, and built a <strong>Kotlin and Jetpack Compose</strong> app that syncs health data, cleans out bad readings, turns them into daily scores and controls the watch, with <strong>no account, no cloud and no analytics</strong>.</p>
+                    </div>
+
+                    <div class="takeaways">
+                        <p class="box-label"><i class="fas fa-key" aria-hidden="true"></i> Key takeaways</p>
+                        <ul class="check-list">
+                        <li>Undocumented Bluetooth protocols can be mapped safely by changing one thing at a time and verifying every finding on the real device.</li>
+                        <li>A safety block list and read-back after every write protected the only watch I had.</li>
+                        <li>Offline-first, incremental sync made the app open instantly.</li>
+                        <li>Most of the "algorithm" work was cleaning messy sensor data, not the scoring maths.</li>
+                        <li>Measured results: about 0.5 s handshake, 0.4 s cold start, about 1 mAh per hour in the background.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="the-problem">The problem</h2>
+                    <p>I bought a budget smartwatch. The hardware was decent; the official companion app wasn't. It drained my phone battery in the background, asked for location, contacts and call logs just to show my steps, uploaded my health data to an unknown server, buried the important numbers several taps deep, and showed obviously wrong readings. It also only tracked sleep if I wore the watch in bed, which I don't.</p>
+                    <p>I didn't want another app that just shows numbers. I wanted one that is <strong>fast, private, light on battery and actually helpful</strong>, so I built my own, with one firm rule: <strong>never risk damaging the watch</strong>. I only had one.</p>
+
+                    <h2 id="what-i-built">What I built</h2>
+                    <p>Sentio is a complete Android app built on my own Bluetooth connection layer. It does everything useful the official app did (sync, notifications, calls, alarms, find my watch, settings, weather and music) and then goes further: it cleans the data before using it, turns it into scores that explain themselves, detects sleep from phone use when the watch isn't worn, and keeps everything on the phone.</p>
+                    <ul class="check-list">
+                    <li><strong>Private by design:</strong> no account, no cloud, no analytics, no ads.</li>
+                    <li><strong>Fast:</strong> about 0.5 s to connect and 0.4 s to open, with the last data shown instantly.</li>
+                    <li><strong>Honest data:</strong> bad readings filtered out, and a confidence label on every score.</li>
+                    <li><strong>Helpful, not noisy:</strong> a morning report and nudges that only appear when they matter.</li>
+                    </ul>
+
+                    <h2 id="how-i-approached-it">How I approached it</h2>
+                    <p>The whole project ran from October to November 2026, alongside my full-time job. I worked in five stages, and each one had to be stable before the next began.</p>
+                    <ol class="cs-steps">
+                    <li><strong>Set the rules first.</strong> Seven written goals: support everything useful the official app did, a much better interface, privacy first, minimal permissions, low battery use, better data, and never damage the watch.</li>
+                    <li><strong>Learn how the watch talks.</strong> I recorded Bluetooth traffic between my own watch and phone, changed one setting at a time, and labelled every finding "verified on the watch" or "to be confirmed".</li>
+                    <li><strong>Build a safe connection.</strong> Pairing, a fast handshake, and two small tested pieces for commands and bulk data, with dangerous commands blocked at the lowest level.</li>
+                    <li><strong>Sync, clean and score the data.</strong> Incremental sync into a local database, filters for bad readings, then scores that explain themselves.</li>
+                    <li><strong>Design, test and live with it.</strong> A calm interface, 8 widgets, testing on two real phones and the real watch, and then daily use. Living with it is the real test.</li>
+                    </ol>
+
+                    <h2 id="key-decisions-and-why">Key decisions and why</h2>
+                    <p>These are the choices that shaped the app, and the reasons behind them.</p>
+                    <div class="cs-decisions">
+                    <div class="decision"><i class="fas fa-lock" aria-hidden="true"></i><div><h3>Everything stays on the phone</h3><p>No account and no cloud. Health data is personal, and keeping it local also made the app faster: the last data shows instantly instead of waiting for a server.</p></div></div>
+                    <div class="decision"><i class="fas fa-shield-halved" aria-hidden="true"></i><div><h3>Safety before features</h3><p>I had one watch. Reset, power-off and firmware commands are blocked at the lowest level, and every setting sent to the watch is read back to confirm it saved.</p></div></div>
+                    <div class="decision"><i class="fas fa-layer-group" aria-hidden="true"></i><div><h3>One layer talks to the watch</h3><p>All Bluetooth code lives in one place, so the screens never deal with raw bytes. Scores, filters and codecs are plain Kotlin with no Android code, which is why they could be covered by unit tests.</p></div></div>
+                    <div class="decision"><i class="fas fa-battery-three-quarters" aria-hidden="true"></i><div><h3>Work with Android, not against it</h3><p>Some phones kill background apps hard. Instead of fighting that, Sentio uses a companion device link, a notification listener and inexact alarms, and syncs every 2 hours instead of constantly.</p></div></div>
+                    <div class="decision"><i class="fas fa-scale-balanced" aria-hidden="true"></i><div><h3>Honest scores</h3><p>This watch doesn't provide heart-rate variability, which premium wearables rely on. So every score is built from what it can measure, compared with my own normal, and shows a confidence label.</p></div></div>
+                    <div class="decision"><i class="fas fa-image" aria-hidden="true"></i><div><h3>Widgets drawn as images</h3><p>Standard widget layouts look different on every launcher. Drawing each widget with my own code at its exact size made them identical everywhere.</p></div></div>
+                    </div>
+
+                    <h2 id="official-app-vs-sentio">Official app vs Sentio</h2>
+                    <div class="table-wrap">
+                    <table class="compare">
+                    <thead><tr><th scope="col">Area</th><th scope="col">Official app (in my testing)</th><th scope="col" class="me">Sentio</th></tr></thead>
+                    <tbody>
+                    <tr><th scope="row">Opening the app</th><td>"Syncing, please wait" on every open</td><td class="me">Last data shows instantly</td></tr>
+                    <tr><th scope="row">Alarms</th><td>Fixed slots; time couldn't be changed</td><td class="me">Full editor, confirmed on the watch</td></tr>
+                    <tr><th scope="row">Data quality</th><td>Impossible values like a 23 h 59 min night</td><td class="me">Bad readings filtered out</td></tr>
+                    <tr><th scope="row">Sleep</th><td>Only if worn in bed</td><td class="me">Detected from phone use too</td></tr>
+                    <tr><th scope="row">Insights</th><td>One unexplained number</td><td class="me">Readiness, Strain, Sleep and Energy, each explained</td></tr>
+                    <tr><th scope="row">Export and widgets</th><td>None</td><td class="me">PDF, CSV, Health Connect and 8 widgets</td></tr>
+                    <tr><th scope="row">Privacy</th><td>Account and cloud upload</td><td class="me">No account, no cloud</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h2 id="one-bug-start-to-finish">One bug, start to finish</h2>
+                    <div class="bug-story">
+                    <p><span>Symptom</span>Everything worked, then the watch dropped the connection exactly every 60 seconds.</p>
+                    <p><span>Investigation</span>I logged every message in both directions and compared my app's conversation with the traffic I had recorded from the official app, one step at a time.</p>
+                    <p><span>Cause</span>The watch was waiting for a "bind" confirmation that the official app sends after connecting. Without it, the watch gave up after a minute.</p>
+                    <p><span>Fix</span>Sentio now sends the same confirmation as part of its handshake. The link stays up for hours.</p>
+                    <p><span>Lesson</span>When hardware misbehaves, compare against a known-good conversation instead of guessing.</p>
+                    </div>
+
+                    <h2 id="results">Results</h2>
+                    <div class="table-wrap">
+                    <table class="compare">
+                    <thead><tr><th scope="col">Measure</th><th scope="col">Result</th></tr></thead>
+                    <tbody>
+                    <tr><th scope="row">Connection handshake</th><td>about 0.5 s</td></tr>
+                    <tr><th scope="row">First sync (7 days of data)</th><td>about 8.5 s, then near-instant</td></tr>
+                    <tr><th scope="row">App cold start</th><td>about 0.4 s</td></tr>
+                    <tr><th scope="row">Background battery use</th><td>about 1 mAh per hour</td></tr>
+                    <tr><th scope="row">Unit tests</th><td>68</td></tr>
+                    <tr><th scope="row">Data sent to any server</th><td>none (only optional weather)</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <h3>How I measured it</h3>
+                    <ul>
+                    <li><strong>Devices:</strong> an Android 11 test phone, my daily Android 13 phone (which closes background apps aggressively) and the real watch. Bluetooth can't be tested in an emulator.</li>
+                    <li><strong>Speed:</strong> cold start measured on the release build, about 6 MB in size.</li>
+                    <li><strong>Battery:</strong> background CPU use read from Android's own battery statistics with the screen off.</li>
+                    <li><strong>Tests:</strong> 68 unit tests cover the codecs, parsers, data filters, scores and sleep detection.</li>
+                    </ul>
+                    <p>Most importantly, I actually use it every morning, and I've stopped opening the official app.</p>
+
+                    <h2 id="the-deep-dive">The deep dive</h2>
+                    <p>Tap any part to read how it works.</p>
+                    <div class="deep-list">
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-magnifying-glass" aria-hidden="true"></i> How I learned the watch's protocol</summary>
+                    <div class="deep-body">
+                    <p>There was no public documentation. I recorded the Bluetooth traffic between my own watch and phone using Android's developer options, mapped the watch's Bluetooth services, and matched each action to its message by changing one setting at a time. Every finding was marked "verified on the watch" or "to be confirmed", and nothing was trusted until the real device confirmed it.</p>
+                    <figure class="cs-figure">
+                    <div class="lanes">
+                    <div class="lane-end"><i class="fas fa-mobile-screen-button" aria-hidden="true"></i>Phone</div>
+                    <div class="lane-list">
+                    <div class="lane"><b>Command lane</b><span>Short commands and events: battery, time, find my watch.</span></div>
+                    <div class="lane"><b>Bulk data lane</b><span>Large transfers like a week of heart rate, sent in chunks.</span></div>
+                    </div>
+                    <div class="lane-end"><i class="fas fa-clock" aria-hidden="true"></i>Watch</div>
+                    </div>
+                    <figcaption>The watch uses two separate "lanes". Illustration.</figcaption>
+                    </figure>
+                    <p>This work was done only so my own app could talk to a watch I own. I don't use or ship any code from the official app.</p>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-link" aria-hidden="true"></i> Keeping the connection stable</summary>
+                    <div class="deep-body">
+                    <p>Pairing uses Android's Companion Device Manager, the standard system pairing screen, which also lets the app reconnect later without location permission. A short handshake sets the time and reads the battery in about half a second.</p>
+                    <p>Two small, fully tested pieces sit underneath: one for short commands, with a <strong>safety block list</strong> so reset, power-off and firmware commands can never be sent, and one for large data transfers, checked against real captured packets. Every setting written to the watch is read back to confirm it saved.</p>
+                    <p>The connection lives in one long-running component that reconnects by itself when the app restarts or the watch comes back into range. The hardest bug here is told in full above, in "One bug, start to finish".</p>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-rotate" aria-hidden="true"></i> Syncing and cleaning the data</summary>
+                    <div class="deep-body">
+                    <p>The first sync pulls 7 days of data in about 8.5 seconds; after that only new data is fetched, so most syncs are almost instant. Everything is stored locally, with safe migrations so updates never wipe history.</p>
+                    <p>Before anything is saved, Sentio removes placeholder heart values, impossible spikes and readings taken while the watch wasn't worn, and merges watch steps with the phone's own step counter so steps aren't lost when the watch is off. A full week of detailed data takes about half a megabyte.</p>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-gauge-high" aria-hidden="true"></i> Turning data into scores</summary>
+                    <div class="deep-body">
+                    <p>Instead of raw graphs, Sentio answers simple questions: <em>Am I recovered? Did I do enough today? Did I sleep enough?</em></p>
+                    <ul>
+                    <li><strong>Readiness (0 to 100)</strong> compares today with my own 30-day normal, not generic averages.</li>
+                    <li><strong>Strain (0 to 21)</strong> measures how hard my body worked, based on heart rate zones.</li>
+                    <li><strong>Sleep</strong> covers sleep need, sleep debt, a score and a suggested bedtime, and learns how much sleep I personally need.</li>
+                    <li><strong>Energy and Heart Points</strong> track a body-battery curve and progress toward 150 active minutes a week.</li>
+                    </ul>
+                    <p>The methods behind them are established ones, adapted to what this watch can measure:</p>
+                    <ul>
+                    <li><strong>Personal baseline:</strong> a 30-day median with a robust spread (median absolute deviation), so one bad day can't skew "normal".</li>
+                    <li><strong>Maximum heart rate:</strong> the Tanaka formula, which is more accurate than "220 minus age".</li>
+                    <li><strong>Strain:</strong> Banister's TRIMP training-load model.</li>
+                    <li><strong>Heart Points:</strong> the WHO guideline of 150 active minutes a week.</li>
+                    <li><strong>Calories:</strong> the Mifflin-St Jeor and Keytel equations, used when the watch's own numbers look wrong.</li>
+                    </ul>
+                    <p>The exact weights, limits and calibration are in the full case study. Every score has a "?" button explaining what it means and what data it needs. Because I don't wear the watch at night, I also built <strong>sleep detection from phone use</strong>: it finds the longest quiet stretch between the last lock at night and the first unlock in the morning, and asks me to confirm possible naps with one tap.</p>
+                    <div class="callout"><i class="fas fa-circle-info" aria-hidden="true"></i><p><strong>Personal estimates, not medical advice.</strong> The scores are built from what this watch can measure and are labelled as estimates in the app.</p></div>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-palette" aria-hidden="true"></i> Design and widgets</summary>
+                    <div class="deep-body">
+                    <p>I wanted Sentio to feel <strong>premium and calm</strong>: a refined sport-watch look, my own design system in Jetpack Compose, and charts drawn by hand on canvas.</p>
+                    <figure class="cs-figure">
+                    <div class="widget-row" aria-hidden="true">
+                    <div class="widget"><small>Readiness</small><div class="mini-ring" style="--v:78"></div><strong>78</strong></div>
+                    <div class="widget"><small>Steps</small><strong>8,214</strong><em>82% of goal</em></div>
+                    <div class="widget night"><small>Last night</small><strong>7 h 12 m</strong><em>Sleep score 84</em></div>
+                    <div class="widget"><small>Watch battery</small><strong>64%</strong><em>≈ 3 days left</em></div>
+                    </div>
+                    <figcaption>Four of the eight home-screen widgets. Illustration with sample data.</figcaption>
+                    </figure>
+                    <p>Each of the 8 widgets is drawn by my own code at its exact size, so they look identical on every phone launcher.</p>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-shield-halved" aria-hidden="true"></i> Privacy, battery and security</summary>
+                    <div class="deep-body">
+                    <ul>
+                    <li><strong>Privacy:</strong> no account, no cloud, no analytics, no ads. Data leaves the phone only when I export it.</li>
+                    <li><strong>Battery:</strong> about 1 mAh per hour in the background, measured with Android's battery stats, with gentler syncing in battery saver.</li>
+                    <li><strong>Security:</strong> app lock with fingerprint, password-protected backups, hidden one-time codes, and release builds signed with my own key.</li>
+                    </ul>
+                    </div>
+                    </details>
+                    <details class="deep">
+                    <summary class="deep-sum"><i class="fas fa-vial" aria-hidden="true"></i> How I tested it</summary>
+                    <div class="deep-body">
+                    <p>Bluetooth can't be tested in an emulator, so everything ran on real hardware: an Android 11 test phone, my daily Android 13 phone (which closes background apps aggressively) and the real watch. Alongside 68 unit tests, I used a hidden test screen with live logs and written checklists for every session, and tested small screens, large fonts and backup-restore across phones.</p>
+                    </div>
+                    </details>
+                    </div>
+
+                    <h2 id="what-i-learned">What I learned</h2>
+                    <ol>
+                    <li><strong>Without documentation, patience wins.</strong> Change one thing at a time and trust nothing until the device confirms it.</li>
+                    <li><strong>Build safety in from day one</strong> when you only have one piece of hardware.</li>
+                    <li><strong>Work with Android's background limits,</strong> not against them.</li>
+                    <li><strong>Real data is messy,</strong> and handling it is most of the work.</li>
+                    <li><strong>Design is in the details:</strong> every score should explain itself.</li>
+                    </ol>
+
+                    <h2 id="building-something-similar-ask-me">Building something similar? Ask me</h2>
+                    <p>If you're working on something close to this, I'm happy to answer questions, share what worked and point you in the right direction.</p>
+                    <ul class="check-list">
+                    <li><strong>Founders</strong> with a wearable, health or connected-device idea who want to know what's realistic.</li>
+                    <li><strong>Developers</strong> stuck on Bluetooth connections, background limits, syncing or battery drain.</li>
+                    <li><strong>Students</strong> learning Android, Kotlin or Jetpack Compose who want to see how a real project is planned.</li>
+                    </ul>
+                    <p>Questions people could ask me:</p>
+                    <ul>
+                    <li>Why does my Bluetooth connection drop on some phones but not others?</li>
+                    <li>How do I sync data in the background without draining the battery?</li>
+                    <li>How should I structure an Android app so the hard parts can be unit tested?</li>
+                    <li>How do I turn noisy sensor data into a number people trust?</li>
+                    <li>Is my device idea realistic, and where should I start?</li>
+                    </ul>
+
+                    <h2 id="request-the-full-case-study">Request the full case study</h2>
+                    <p>This page is the short version. The full technical case study covers the protocol research, connection design, the exact scoring formulas and weights, the architecture and every test result. I share it personally: send me a message through my contact form with a little about yourself, and I'll email it to you.</p>
+                    <p class="cta-pair"><a class="btn btn-primary" href="./?request=sentio-case-study#contact"><span>Request the full case study</span> <i class="fas fa-file-lines" aria-hidden="true"></i></a> <a class="btn btn-ghost" href="./?request=sentio-question#contact"><span>Ask me a question</span> <i class="fas fa-comments" aria-hidden="true"></i></a></p>
+
+                    <p><em>Personal project, built for my own device and my own use. Not affiliated with, endorsed by or connected to any smartwatch manufacturer; brand names are omitted on purpose. Illustrations use sample data. Last updated 18 November 2026.</em></p>
+
+                    <h2 id="faq">Frequently asked questions</h2>
+                    <div class="faq-list">
+                        <details class="reveal">
+                            <summary>How did you connect to a smartwatch with no public documentation?</summary>
+                            <p>I recorded the Bluetooth traffic between my own watch and phone using Android's developer options, mapped the watch's Bluetooth services, and matched each action to its message by changing one setting at a time. Every finding was marked as verified on the watch or still to be confirmed.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>Does Sentio send health data to the cloud?</summary>
+                            <p>No. Sentio has no account, no cloud and no analytics. Health data stays on the phone, and the internet is used only for an optional weather forecast. Data leaves the phone only when I export it.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>Could a custom companion app damage the watch?</summary>
+                            <p>It could if it sent the wrong commands, so Sentio has a safety block list that makes reset, power-off and firmware commands impossible to send, and every setting written to the watch is read back to confirm it was saved.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>Is Sentio available to download?</summary>
+                            <p>No. Sentio is a personal project built for my own watch and my own use, and it is not published on any app store.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>How do you keep a Bluetooth Low Energy connection stable on Android?</summary>
+                            <p>Pair through Android's Companion Device Manager so the app can reconnect without location permission, keep the connection in one long-running component that reconnects by itself, and compare your app's messages with a known-good conversation when the device drops the link. In Sentio, a missing confirmation message caused a disconnect every 60 seconds.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>How do you sync health data from a wearable without draining the phone battery?</summary>
+                            <p>Sync incrementally so only new data is fetched, sync on app open and every 2 hours rather than constantly, back off in battery saver, and debounce heavy work like recomputing scores. Sentio uses about 1 mAh per hour in the background, measured with Android's battery statistics.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>Can I ask you questions if I am building or learning something similar?</summary>
+                            <p>Yes. Founders, developers and students can send me a question through the contact form on my portfolio, whether it is about Bluetooth connections, background syncing, testing or whether an idea is realistic.</p>
+                        </details>
+                        <details class="reveal">
+                            <summary>Can I read the full technical case study?</summary>
+                            <p>Yes. The full version covers the protocol research, exact scoring formulas, architecture and test results. Request it through the contact form on my portfolio and I will send it to you personally by email.</p>
+                        </details>
+                    </div>
+
+                    <div class="cta-box">
+                        <h2>Want the full technical case study?</h2>
+                        <p>This page is the short version. The full case study covers the protocol research, connection design, the exact scoring formulas, the architecture and every test result. <a href="./?request=sentio-case-study#contact">Request it through my contact form</a> and I'll send it to you personally.</p>
+                        <div class="btn-container">
+                            <a href="./?request=sentio-case-study#contact" class="btn btn-light"><i class="fas fa-file-lines" aria-hidden="true"></i> Request the full case study</a>
+                        </div>
+                    </div>
+
+                    <div class="share">
+                    <span class="share-label">Share</span>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/?text=Sentio%3A%20Building%20My%20Own%20Companion%20App%20for%20a%20Smartwatch%20https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html&amp;text=Sentio%3A%20Building%20My%20Own%20Companion%20App%20for%20a%20Smartwatch" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                    <button type="button" data-copy="https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html" aria-label="Copy link"><i class="fas fa-link" aria-hidden="true"></i></button>
+                    </div>
+
+                    <div class="author-box">
+                        <img src="yash-trivedi.jpg" alt="Yash Trivedi" width="76" height="76" loading="lazy" decoding="async">
+                        <div>
+                            <p class="author-name">Written by Yash Trivedi</p>
+                            <p>AI Automation &amp; SEO Specialist based in Ahmedabad, India, and the developer behind <a href="https://gathered.pages.dev/" target="_blank" rel="noopener">Gathered</a>, <a href="https://throvic.pages.dev/" target="_blank" rel="noopener">Throvic</a> and <a href="https://cyber-kavach.vercel.app/" target="_blank" rel="noopener">Cyber Kavach</a>. I build AI-powered apps and help businesses worldwide get found on Google and recommended by AI search. <a href="index.html">Portfolio</a> · <a href="https://in.linkedin.com/in/yash-trivedii" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="post-aside" aria-label="Article tools">
+                    <div class="toc" role="navigation" aria-label="Table of contents">
+                        <p class="box-label"><i class="fas fa-list" aria-hidden="true"></i> In this article</p>
+                        <ol>
+                            <li><a href="#the-problem">The problem</a></li>
+                            <li><a href="#what-i-built">What I built</a></li>
+                            <li><a href="#how-i-approached-it">How I approached it</a></li>
+                            <li><a href="#key-decisions-and-why">Key decisions and why</a></li>
+                            <li><a href="#official-app-vs-sentio">Official app vs Sentio</a></li>
+                            <li><a href="#one-bug-start-to-finish">One bug, start to finish</a></li>
+                            <li><a href="#results">Results</a></li>
+                            <li><a href="#the-deep-dive">The deep dive</a></li>
+                            <li><a href="#what-i-learned">What I learned</a></li>
+                            <li><a href="#building-something-similar-ask-me">Building something similar? Ask me</a></li>
+                            <li><a href="#request-the-full-case-study">Request the full case study</a></li>
+                            <li><a href="#faq">Frequently asked questions</a></li>
+                        </ol>
+                    </div>
+                    <div class="share">
+                    <span class="share-label">Share</span>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/?text=Sentio%3A%20Building%20My%20Own%20Companion%20App%20for%20a%20Smartwatch%20https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fyash635644.github.io%2Fyash-portfolio%2Fsentio-smartwatch-companion-app-case-study.html&amp;text=Sentio%3A%20Building%20My%20Own%20Companion%20App%20for%20a%20Smartwatch" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+                    <button type="button" data-copy="https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html" aria-label="Copy link"><i class="fas fa-link" aria-hidden="true"></i></button>
+                    </div>
+                    <div class="aside-cta">
+                        <h3>Get the full case study</h3>
+                        <p>Protocol research, formulas, architecture and test results. Sent personally on request.</p>
+                        <a href="./?request=sentio-case-study#contact" class="btn btn-light">Request the full case study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section section-tint" aria-labelledby="more-title">
+            <div class="section-head reveal">
+                <span class="eyebrow">// keep reading</span>
+                <h2 id="more-title">More resources</h2>
+            </div>
+            <div class="related">
+                <a href="upsc-mind-maps-guide.html" class="reveal"><span>How to make UPSC mind maps<small>UPSC Preparation · 6 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="online-fraud-what-to-do-first-hour.html" class="reveal"><span>What to do after online fraud<small>Cyber Safety · 6 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="what-is-geo-aeo.html" class="reveal"><span>What is GEO and AEO?<small>AI Search · 5 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="social-media-management-guide.html" class="reveal"><span>Social media management guide<small>Social Media · 5 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="ai-web-app-development-guide.html" class="reveal"><span>AI web and app development guide<small>AI Development · 6 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="technical-seo-audit-checklist.html" class="reveal"><span>Technical SEO audit checklist<small>Technical SEO · 4 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="ai-faster-web-app-development.html" class="reveal"><span>AI for faster web and app development<small>AI Development · 4 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="local-seo-checklist-ahmedabad.html" class="reveal"><span>Local SEO checklist for Ahmedabad<small>Local SEO · 4 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="ai-automation-ideas-small-business.html" class="reveal"><span>AI automation ideas for small businesses<small>AI Automation · 4 min read</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="ai-automation-ahmedabad.html" class="reveal"><span>AI Automation &amp; Apps<small>Voice agents, LLM features and automations that do real work</small></span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <a href="./?request=sentio-case-study#contact" class="mobile-cta"><i class="fas fa-file-lines" aria-hidden="true"></i> Request the full case study</a>
+
+    <footer>
+        <ul class="footer-services" aria-label="Services and blog">
+            <li><a href="services.html">All services</a></li>
+            <li><a href="seo-expert-ahmedabad.html">SEO Expert in Ahmedabad</a></li>
+            <li><a href="ai-seo-expert-ahmedabad.html">AI SEO (AEO &amp; GEO)</a></li>
+            <li><a href="ai-automation-ahmedabad.html">AI Automation &amp; Apps</a></li>
+            <li><a href="social-media-management-ahmedabad.html">Social Media Management</a></li>
+            <li><a href="blog.html">Resources</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+        <div class="footer-inner">
+            <a href="index.html" class="logo logo-footer" aria-label="Yash Trivedi – home">YT<span>.</span></a>
+            <p>© <span id="year">2026</span> Yash Trivedi · AI Automation &amp; SEO · Ahmedabad<br><small class="updated">Last updated <time datetime="2026-11-18">November 2026</time></small></p>
+            <ul class="footer-social" aria-label="Social profiles">
+                <li><a href="https://in.linkedin.com/in/yash-trivedii" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/yash635644" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://ink-inspired.blogspot.com/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Personal blog on Blogger"><i class="fab fa-blogger-b" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"
+            aria-hidden="true"></i></button>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

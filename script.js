@@ -148,6 +148,22 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCta();
     }
 
+    // 4d-2. Resources filter tabs: All / Articles / Case studies
+    const resTabs = document.querySelectorAll(".res-tabs button[data-filter]");
+    resTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const filter = tab.dataset.filter;
+            resTabs.forEach(t => {
+                t.classList.toggle("active", t === tab);
+                t.setAttribute("aria-pressed", String(t === tab));
+            });
+            document.querySelectorAll(".post-grid .post-card[data-type]").forEach(card => {
+                card.hidden = filter !== "all" && card.dataset.type !== filter;
+                if (!card.hidden) card.classList.add("is-visible");
+            });
+        });
+    });
+
     // 4e. Copy-link share button
     document.querySelectorAll("[data-copy]").forEach(btn => {
         btn.addEventListener("click", async () => {
@@ -323,6 +339,25 @@ document.addEventListener("DOMContentLoaded", function () {
     // 8. Contact form via Formspree
     const form = document.getElementById("contactForm");
     const status = document.getElementById("formStatus");
+
+    // Arriving from a case study button: say what the message is about
+    const REQUESTS = {
+        "sentio-case-study": ["Full case study request: Sentio", "Hi Yash, I'd like to read the full Sentio case study. A little about me: "],
+        "sentio-question": ["Question about the Sentio case study", "Hi Yash, I read the Sentio case study. I'm building / learning: \nMy question: "]
+    };
+    const request = form && REQUESTS[new URLSearchParams(location.search).get("request")];
+    if (request) {
+        const msg = form.querySelector("#message");
+        let subject = form.querySelector("input[name='_subject']");
+        if (!subject) {
+            subject = document.createElement("input");
+            subject.type = "hidden";
+            subject.name = "_subject";
+            form.prepend(subject);
+        }
+        subject.value = request[0];
+        if (msg && !msg.value) msg.value = request[1];
+    }
 
     if (form) {
         form.addEventListener("submit", async function (e) {

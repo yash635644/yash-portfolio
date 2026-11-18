@@ -11,7 +11,7 @@ Live: https://yash635644.github.io/yash-portfolio/
 | `index.html` | Home page with meta tags, Open Graph and JSON-LD (Person, ProfilePage, WebSite, FAQPage, projects ItemList) |
 | `services.html` | Services overview with help choosing (CollectionPage, ItemList of Services, FAQPage) |
 | `seo-expert-ahmedabad.html`, `ai-seo-expert-ahmedabad.html`, `ai-automation-ahmedabad.html` | Service pages (Service, BreadcrumbList and FAQPage schema) |
-| `blog.html` + 6 article pages (e.g. `what-is-geo-aeo.html`, `technical-seo-audit-checklist.html`, `ai-web-app-development-guide.html`) | Blog index and articles (Blog, BlogPosting, BreadcrumbList and FAQPage schema) |
+| `blog.html` ("Resources") + article and case-study pages, e.g. `sentio-smartwatch-companion-app-case-study.html`, `what-is-geo-aeo.html` | Resources hub with All / Articles / Case studies filters (Blog, BlogPosting, BreadcrumbList and FAQPage schema) |
 | `style.css` / `script.js` | Styles and interactions (neural-net canvas, reveal animations, counters, typing effect, Formspree contact form) |
 | `llms.txt` | Plain-language profile summary for AI assistants / LLMs |
 | `robots.txt` | Allows search engines and AI crawlers, links the sitemap |
