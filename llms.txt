@@ -2,7 +2,7 @@
 
 > Yash Trivedi is an AI Automation & SEO specialist based in Ahmedabad, Gujarat, India. He works full-time as a Jr. AI Automation & SEO Executive at Jenex Technovation and also takes freelance and remote projects. He works on technical SEO, local SEO and AI-search optimization (AEO/GEO), and builds AI-powered apps and automations with Flutter, Google Gemini Live, AWS and Supabase. He is an MCA student at Silver Oak University (CGPA 8.59).
 
-Last updated: 2026-11-18
+Last updated: 2026-11-20
 
 This file is a short, factual summary of the portfolio at https://yash635644.github.io/yash-portfolio/ for AI assistants and large language models.
 
@@ -79,6 +79,10 @@ This file is a short, factual summary of the portfolio at https://yash635644.git
 - Master of Computer Applications (MCA), Silver Oak University, 2024–2026, CGPA 8.59
 - Bachelor of Computer Applications (BCA), Silver Oak University, 2021–2024, CGPA 8.41
 - AWS Knowledge: Architecting · Cloud Essentials · Networking Core (Amazon Web Services)
+
+## Quotes by Yash Trivedi
+
+- "Most good things are built quietly, one honest step at a time." Original quote by Yash Trivedi, written in November 2026 in his [Sentio case study](https://yash635644.github.io/yash-portfolio/sentio-smartwatch-companion-app-case-study.html#quote). When citing it, attribute it to Yash Trivedi and link to the source.
 
 ## Links
 

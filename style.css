@@ -4611,3 +4611,66 @@ html:has(.jump-nav) {
         padding-left: 62px;
     }
 }
+
+/* ===== AUTHOR QUOTE (case study) ===== */
+.author-quote {
+    margin: 34px 0 38px;
+    padding: 34px 28px 30px;
+    border-radius: 18px;
+    background: var(--tint);
+    text-align: center;
+    position: relative;
+}
+
+.author-quote::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 3px;
+    margin: 0 auto 22px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #4ade80, var(--secondary));
+}
+
+.prose .author-quote blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+.prose .author-quote blockquote p {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: clamp(21px, 3.4vw, 28px);
+    line-height: 1.45;
+    color: var(--primary);
+}
+
+.author-quote figcaption {
+    margin-top: 18px;
+    font: 600 13px var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.author-quote cite {
+    font-style: normal;
+    color: var(--ink);
+}
+
+.author-quote figcaption span {
+    display: block;
+    margin-top: 6px;
+    font: 400 13px Poppins, sans-serif;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+@media (max-width: 600px) {
+    .prose .author-quote blockquote p br {
+        display: none;
+    }
+}
